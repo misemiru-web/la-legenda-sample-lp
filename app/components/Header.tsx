@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./Header.module.css";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const hotPepperUrl = "https://beauty.hotpepper.jp/kr/slnH000813087/?cstt=1";
 
 const links = [
   ["Concept", "#concept"],
@@ -79,7 +80,7 @@ export function Header() {
         </a>
         <nav className={styles.desktopNav} aria-label="メインナビゲーション">
           {links.map(([label, href]) => <a href={href} key={href}>{label}</a>)}
-          <a className={styles.headerCta} href="#reservation">体験・相談を予約する</a>
+          <a className={styles.headerCta} href={hotPepperUrl}>体験を予約する</a>
         </nav>
         <button
           ref={buttonRef}
@@ -101,7 +102,7 @@ export function Header() {
       >
         <nav aria-label="モバイルナビゲーション">
           {links.map(([label, href]) => <a href={href} key={href} onClick={closeMenu}>{label}</a>)}
-          <a className={styles.mobileCta} href="#reservation" onClick={closeMenu}>体験・相談を予約する</a>
+          <a className={styles.mobileCta} href={hotPepperUrl} onClick={closeMenu}>体験を予約する</a>
         </nav>
       </div>
     </header>

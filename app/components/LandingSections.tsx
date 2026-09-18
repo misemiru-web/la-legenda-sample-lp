@@ -4,6 +4,8 @@ import styles from "../page.module.css";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const imagePath = (name: string) => `${basePath}/images/${name}`;
+const hotPepperUrl = "https://beauty.hotpepper.jp/kr/slnH000813087/?cstt=1";
+const lineUrl = "https://line.me/R/ti/p/@240pmolc?ts=06281635&oat_content=url";
 
 const trainingPlans = [
   { number: "01", label: "1回 / 70分", price: "¥14,000" },
@@ -42,7 +44,7 @@ export function HeroSection() {
       <p className={styles.heroEyebrow}>PERSONAL TRAINING × BODY CARE</p>
       <h1 id="hero-title" data-reveal="heading"><span className={styles.heroTitleDesktop}><span>鍛えるだけじゃない。</span><span>これからも動ける身体へ。</span></span><span className={styles.heroTitleMobile}><span>鍛えるだけじゃない。</span><span>これからも</span><span>動ける身体へ。</span></span></h1>
       <p className={styles.heroLead} data-reveal="body" data-reveal-order="1"><span>パーソナルトレーニングと身体のケアをひとつの場所で。</span><span>大人世代のためのフィットネス＆ウェルネス。</span></p>
-      <div className={styles.heroActions} data-reveal="body" data-reveal-order="1"><a className={styles.goldButton} href="#reservation">体験・相談を予約する</a><a className={styles.darkTextLink} href="#price">メニューを見る</a></div>
+      <div className={styles.heroActions} data-reveal="body" data-reveal-order="1"><a className={styles.goldButton} href={hotPepperUrl}>体験を予約する</a><a className={styles.darkTextLink} href="#price">メニューを見る</a></div>
       <p className={styles.location}>神奈川県横浜市保土ケ谷区星川1-25-10</p><p className={styles.location}>星川駅から徒歩約3分</p>
     </div>
     <picture className={styles.heroVisual} data-reveal="image-right" data-reveal-order="2"><source media="(max-width: 767px)" srcSet={imagePath("hero_personal_training_mobile.webp")} /><Image src={imagePath("hero_personal_training_desktop.webp")} alt="LA LEGENDAのトレーニングスペースで受けるパーソナルトレーニング" width={1536} height={1024} priority unoptimized sizes="(max-width: 767px) 100vw, 58vw" /></picture>
@@ -124,7 +126,7 @@ export function MenuPriceSection() {
   return <section id="price" className={styles.price} aria-labelledby="price-title"><div className={styles.priceArc} aria-hidden="true" /><div className={styles.container}>
     <SectionHeading id="price-title" eyebrow="MENU & PRICE" light title={<span className={styles.priceTitle}><span>続け方に合わせて選べる、</span><span>シンプルな料金。</span></span>} /><p className={styles.priceLead} data-reveal="body" data-reveal-order="1">目的やライフスタイルに合わせたプランを用意しています。表示価格は2026年9月時点の公式Instagram掲載情報を基にしたサンプルです。</p>
     <div className={styles.priceColumns} data-reveal="body" data-reveal-order="1"><div><div className={styles.priceTitleRow}><h3>PERSONAL TRAINING</h3><p>1回70分</p></div><PriceList items={trainingPlans} /></div><div><div className={styles.priceTitleRow}><h3>BODY CARE / WELLNESS</h3><p>代表メニュー</p></div><PriceList items={wellnessPlans} /></div></div>
-    <p className={styles.priceNote} data-reveal="body" data-reveal-order="1">価格の税込・税別区分、最新料金は正式公開前に店舗確認が必要です。</p><a className={styles.goldButton} href="#reservation" data-reveal="body" data-reveal-order="1">体験・相談を予約する</a>
+    <p className={styles.priceNote} data-reveal="body" data-reveal-order="1">価格の税込・税別区分、最新料金は正式公開前に店舗確認が必要です。</p><a className={styles.goldButton} href={hotPepperUrl} data-reveal="body" data-reveal-order="1">体験を予約する</a>
   </div></section>;
 }
 
@@ -143,7 +145,7 @@ export function AccessSection() {
 }
 
 export function FinalCtaSection() {
-  return <section id="reservation" className={styles.finalCta} aria-labelledby="reservation-title"><Image className={styles.finalCtaBackground} src={imagePath("space_training_floor_main.webp")} alt="" fill unoptimized sizes="100vw" /><div className={styles.finalCtaShade} aria-hidden="true" /><div className={styles.finalArc} aria-hidden="true" /><div className={styles.container}><p className={styles.eyebrow}>START FROM TODAY</p><span className={styles.goldRule} aria-hidden="true" /><h2 id="reservation-title" data-reveal="heading"><span className={styles.finalTitleDesktop}><span>これからの身体のために、</span><span>まずは今を知るところから。</span></span><span className={styles.finalTitleMobile}><span>これからの体のために</span><span>まずは今を知るところから。</span></span></h2><p className={styles.finalLead} data-reveal="body" data-reveal-order="1"><span>トレーニングも、身体のケアも。</span><span>あなたに合った一歩を<span className={styles.noWrap}>LA LEGENDA</span>で。</span></p><p className={styles.reservationNotice} data-reveal="body" data-reveal-order="1">正式な予約URL・<span className={styles.noWrap}>Instagramアカウント</span>へのリンクは、公開前の確認後に接続します。</p><a className={`${styles.goldButton} ${styles.pendingButton}`} href="#access" aria-label="予約方法と店舗情報を確認する" data-reveal="body" data-reveal-order="1">予約方法を確認する</a></div></section>;
+  return <section id="reservation" className={styles.finalCta} aria-labelledby="reservation-title"><Image className={styles.finalCtaBackground} src={imagePath("space_training_floor_main.webp")} alt="" fill unoptimized sizes="100vw" /><div className={styles.finalCtaShade} aria-hidden="true" /><div className={styles.finalArc} aria-hidden="true" /><div className={styles.container}><p className={styles.eyebrow}>START FROM TODAY</p><span className={styles.goldRule} aria-hidden="true" /><h2 id="reservation-title" data-reveal="heading"><span className={styles.finalTitleDesktop}><span>これからの身体のために、</span><span>まずは今を知るところから。</span></span><span className={styles.finalTitleMobile}><span>これからの体のために</span><span>まずは今を知るところから。</span></span></h2><p className={styles.finalLead} data-reveal="body" data-reveal-order="1"><span>トレーニングも、身体のケアも。</span><span>あなたに合った一歩を<span className={styles.noWrap}>LA LEGENDA</span>で。</span></p><p className={styles.reservationNotice} data-reveal="body" data-reveal-order="1">正式な予約URL・<span className={styles.noWrap}>Instagramアカウント</span>へのリンクは、公開前の確認後に接続します。</p><a className={`${styles.goldButton} ${styles.pendingButton}`} href={lineUrl} aria-label="LINEで相談する" data-reveal="body" data-reveal-order="1">LINEで相談する</a></div></section>;
 }
 
 export function Footer() {
