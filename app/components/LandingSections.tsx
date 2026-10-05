@@ -1,3 +1,4 @@
+import { ArrowUpRight, CalendarCheck2, CalendarDays, Car, Clock3, Instagram, MapPin, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import type { ReactNode } from "react";
 import styles from "../page.module.css";
@@ -13,9 +14,9 @@ const externalLinks = {
 };
 
 const reservationLinks = [
-  { label: "Instagram", href: externalLinks.instagram },
-  { label: "Hot Pepper Beauty", href: externalLinks.hotPepper },
-  { label: "LINE", href: externalLinks.line },
+  { label: "Instagram", href: externalLinks.instagram, icon: Instagram },
+  { label: "Hot Pepper Beauty", href: externalLinks.hotPepper, icon: CalendarCheck2 },
+  { label: "LINE", href: externalLinks.line, icon: MessageCircle },
 ];
 
 // 営業提案用の外観候補。店舗提供写真の受領後にここを差し替える。
@@ -181,12 +182,12 @@ export function AccessSection() {
           <h2 id="access-title" data-reveal="heading"><span className={styles.accessTitleDesktop}><span>星川で、</span><span>自分の身体と向き合う。</span></span><span className={styles.accessTitleMobile}><span>星川で、</span><span>自分の身体と向き合う。</span></span></h2>
           <address data-reveal="body" data-reveal-order="1"><strong>LA LEGENDA</strong>神奈川県横浜市保土ケ谷区星川1-25-10 Aletta星川1階</address>
           <dl className={styles.accessMetaList} data-reveal="body" data-reveal-order="1">
-            <div><dt>最寄駅</dt><dd>星川駅から徒歩約3分</dd></div>
-            <div><dt>駐車場</dt><dd>GYM前 無料駐車場2台</dd></div>
-            <div><dt>営業時間</dt><dd>10:00〜20:00</dd></div>
-            <div><dt>定休日</dt><dd>不定休</dd></div>
+            <div><dt><MapPin className={`${styles.icon} ${styles.accessIcon}`} aria-hidden="true" />最寄駅</dt><dd>星川駅から徒歩約3分</dd></div>
+            <div><dt><Car className={`${styles.icon} ${styles.accessIcon}`} aria-hidden="true" />駐車場</dt><dd>GYM前 無料駐車場2台</dd></div>
+            <div><dt><Clock3 className={`${styles.icon} ${styles.accessIcon}`} aria-hidden="true" />営業時間</dt><dd>10:00〜20:00</dd></div>
+            <div><dt><CalendarDays className={`${styles.icon} ${styles.accessIcon}`} aria-hidden="true" />定休日</dt><dd>不定休</dd></div>
           </dl>
-          <a className={styles.mapLink} href={externalLinks.googleMaps} target="_blank" rel="noopener noreferrer" data-reveal="body" data-reveal-order="1">Google Mapsで見る<span aria-hidden="true">↗</span></a>
+          <a className={styles.mapLink} href={externalLinks.googleMaps} target="_blank" rel="noopener noreferrer" data-reveal="body" data-reveal-order="1">Google Mapsで見る<ArrowUpRight className={styles.icon} aria-hidden="true" /></a>
         </div>
         <figure className={styles.accessVisual} data-reveal="image-right" data-reveal-order="2">
           <Image src={imagePath(accessImage.src)} alt={accessImage.alt} width={accessImage.width} height={accessImage.height} unoptimized sizes="(max-width: 767px) calc(100vw - 40px), 55vw" />
@@ -194,13 +195,13 @@ export function AccessSection() {
         </figure>
         <div className={styles.instagramInfo} data-reveal="body" data-reveal-order="1">
           <Image className={styles.instagramQr} src={imagePath("instagram_qr.png")} alt="LA LEGENDA公式Instagramを開くQRコード" width={592} height={592} unoptimized sizes="160px" />
-          <div><p>INSTAGRAM</p><a className={styles.mapLink} href={externalLinks.instagram} target="_blank" rel="noopener noreferrer">Instagramを開く<span aria-hidden="true">↗</span></a></div>
+          <div><p>INSTAGRAM</p><a className={styles.mapLink} href={externalLinks.instagram} target="_blank" rel="noopener noreferrer"><Instagram className={styles.icon} aria-hidden="true" />Instagramを開く<ArrowUpRight className={styles.icon} aria-hidden="true" /></a></div>
         </div>
       </div>
       <section id="reservation" className={styles.reservationHub} aria-labelledby="reservation-title">
         <div data-reveal="heading"><p className={styles.eyebrow}>RESERVATION</p><h2 id="reservation-title">ご予約・ご相談</h2></div>
         <nav className={styles.reservationLinks} aria-label="外部サービスで予約・相談" data-reveal="body" data-reveal-order="1">
-          {reservationLinks.map(({ label, href }, index) => <a href={href} key={label} target="_blank" rel="noopener noreferrer"><span className={styles.reservationNumber} aria-hidden="true">0{index + 1}</span><span>{label}</span><span aria-hidden="true">↗</span></a>)}
+          {reservationLinks.map(({ label, href, icon: Icon }, index) => <a href={href} key={label} target="_blank" rel="noopener noreferrer"><span className={styles.reservationNumber} aria-hidden="true">0{index + 1}</span><span className={styles.reservationLabel}><Icon className={styles.icon} aria-hidden="true" />{label}</span><ArrowUpRight className={styles.icon} aria-hidden="true" /></a>)}
         </nav>
       </section>
     </div>

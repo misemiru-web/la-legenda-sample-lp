@@ -218,9 +218,11 @@
 .accessCopy address strong { display: block; margin-bottom: 8px; color: var(--color-text); font-family: var(--font-display); font-size: 20px; }
 .accessMetaList { margin-top: 20px; }
 .accessMetaList > div { display: grid; padding: 8px 0; grid-template-columns: 80px minmax(0, 1fr); gap: 16px; border-bottom: 1px solid rgb(90 83 74 / 20%); }
-.accessMetaList dt { color: var(--color-text-secondary); font-size: 14px; }
+.accessMetaList dt { display: flex; align-items: center; gap: 8px; white-space: nowrap; color: var(--color-text-secondary); font-size: 14px; }
 .accessMetaList dd { font-size: 16px; }
-.mapLink { display: inline-flex; min-height: 48px; margin-top: 16px; align-items: center; gap: 16px; font-size: 16px; text-decoration: underline; text-underline-offset: 5px; }
+.mapLink { display: inline-flex; min-height: 48px; margin-top: 16px; align-items: center; gap: 12px; font-size: 16px; text-decoration: underline; text-underline-offset: 5px; }
+.icon { width: 18px; height: 18px; flex-shrink: 0; stroke-width: 1.75; }
+.accessIcon { width: 16px; height: 16px; }
 .mapLink:hover { color: var(--color-gold-strong); }
 .accessVisual { grid-column: 2; grid-row: 1 / 3; }
 .accessVisual figcaption { margin-top: 8px; color: var(--color-text-secondary); font-size: 12px; }
@@ -235,6 +237,7 @@
 .reservationLinks a { display: grid; min-height: 56px; padding: 12px 4px; grid-template-columns: 28px minmax(0, 1fr) auto; align-items: center; gap: 16px; border-bottom: 1px solid var(--color-border); font-size: 17px; }
 .reservationLinks a:first-child { border-top: 1px solid var(--color-border); }
 .reservationLinks a:hover { color: var(--color-gold-strong); background: var(--color-ivory); }
+.reservationLabel { display: flex; min-width: 0; align-items: center; gap: 10px; }
 .reservationNumber { color: var(--color-gold-strong); font-family: var(--font-display); font-size: 14px; }
 .accessVisual img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; object-position: center; }
 
@@ -323,6 +326,7 @@
 }
 
 @media (min-width: 1024px) {
+  .reservationHub { margin-top: 40px; }
   .serviceCopy .sectionHeading h2 { font-size: 36px; word-break: keep-all; }
   .firstVisit { padding: 64px 0; }
   .firstVisit .goldRule { margin: 18px 0 24px; }
@@ -517,7 +521,7 @@
   .accessCopy h2 { font-size: clamp(24px, 7.5vw, 30px); line-height: 1.45; }
   .accessCopy address { margin-top: 18px; }
   .accessMetaList { margin-top: 14px; }
-  .accessMetaList > div { padding: 6px 0; grid-template-columns: 72px minmax(0, 1fr); gap: 12px; }
+  .accessMetaList > div { padding: 6px 0; grid-template-columns: 80px minmax(0, 1fr); gap: 12px; }
   .mapLink { margin-top: 12px; }
   .instagramQr { display: none; }
   .instagramInfo { gap: 0; }
