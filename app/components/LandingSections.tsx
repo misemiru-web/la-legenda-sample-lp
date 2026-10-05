@@ -180,7 +180,7 @@ export function AccessSection() {
           <p className={styles.eyebrow}>ACCESS</p>
           <span className={styles.goldRule} aria-hidden="true" />
           <h2 id="access-title" data-reveal="heading"><span className={styles.accessTitleDesktop}><span>星川で、</span><span>自分の身体と向き合う。</span></span><span className={styles.accessTitleMobile}><span>星川で、</span><span>自分の身体と向き合う。</span></span></h2>
-          <address data-reveal="body" data-reveal-order="1"><strong>LA LEGENDA</strong>神奈川県横浜市保土ケ谷区星川1-25-10 Aletta星川1階</address>
+          <address data-reveal="body" data-reveal-order="1"><strong>LA LEGENDA</strong>神奈川県横浜市保土ケ谷区星川1-25-10{" "}<span className={styles.accessBuilding}>Aletta星川1階</span></address>
           <dl className={styles.accessMetaList} data-reveal="body" data-reveal-order="1">
             <div><dt><MapPin className={`${styles.icon} ${styles.accessIcon}`} aria-hidden="true" />最寄駅</dt><dd>星川駅から徒歩約3分</dd></div>
             <div><dt><Car className={`${styles.icon} ${styles.accessIcon}`} aria-hidden="true" />駐車場</dt><dd>GYM前 無料駐車場2台</dd></div>
