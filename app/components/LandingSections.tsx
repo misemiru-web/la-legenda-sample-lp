@@ -12,6 +12,20 @@ const externalLinks = {
   interview: "https://localstyle-yokohama.jp/hodogaya-ku/beauty_list/facilities/10335",
 };
 
+const reservationLinks = [
+  { label: "Instagram", href: externalLinks.instagram },
+  { label: "Hot Pepper Beauty", href: externalLinks.hotPepper },
+  { label: "LINE", href: externalLinks.line },
+];
+
+// 営業提案用の外観候補。店舗提供写真の受領後にここを差し替える。
+const accessImage = {
+  src: "access_exterior_entrance.webp",
+  alt: "LA LEGENDAの店舗外観・入口（サンプル用イメージ）",
+  width: 1536,
+  height: 1024,
+};
+
 const trainingPlans = [
   { number: "01", label: "1回 / 70分", price: "¥14,000" },
   { number: "02", label: "月2回 ライト", price: "¥26,000" },
@@ -44,8 +58,14 @@ function SectionHeading({ eyebrow, title, light = false, id }: { eyebrow: string
   return <div className={`${styles.sectionHeading} ${light ? styles.light : ""}`} data-reveal="heading"><p className={styles.eyebrow}>{eyebrow}</p><span className={styles.goldRule} aria-hidden="true" /><h2 id={id}>{title}</h2></div>;
 }
 
-function PriceList({ items }: { items: typeof trainingPlans }) {
-  return <dl className={styles.priceList}>{items.map((item) => <div className={styles.priceRow} key={item.number}><dt><span>{item.number}</span>{item.label}</dt><dd>{item.price}</dd></div>)}</dl>;
+function PriceList({ items, showDuration = false }: { items: typeof trainingPlans; showDuration?: boolean }) {
+  return <dl className={styles.priceList}>{items.map((item) => {
+    const durationStart = item.label.lastIndexOf(" ");
+    return <div className={styles.priceRow} key={item.number}>
+      <dt><span>{item.number}</span>{showDuration ? <div className={styles.priceMenuLabel}>{item.label.slice(0, durationStart)}<small>{item.label.slice(durationStart)}</small></div> : item.label}</dt>
+      <dd>{item.price}</dd>
+    </div>;
+  })}</dl>;
 }
 
 export function HeroSection() {
@@ -137,8 +157,8 @@ export function MenuPriceSection() {
   return <section id="price" className={styles.price} aria-labelledby="price-title"><div className={styles.priceArc} aria-hidden="true" /><div className={styles.container}>
     <SectionHeading id="price-title" eyebrow="MENU & PRICE" light title={<span className={styles.priceTitle}><span>続け方に合わせて選べる、</span><span>シンプルな料金。</span></span>} /><p className={styles.priceLead} data-reveal="body" data-reveal-order="1">目的やライフスタイルに合わせたプランを用意しています。表示価格は公式Instagram掲載情報と店舗提供の最新情報を基にしたサンプルです。</p>
     <div className={styles.priceColumns} data-reveal="body" data-reveal-order="1"><div><div className={styles.priceTitleRow}><h3>PERSONAL TRAINING</h3><p>1回70分</p></div><PriceList items={trainingPlans} /></div><div className={styles.wellnessPricing}>
-      <div><div className={styles.priceTitleRow}><h3>CARE &amp; WELLNESS</h3><p>代表メニュー</p></div><PriceList items={wellnessPlans} /></div>
-      <div><div className={styles.priceTitleRow}><h3>HYPER KNIFE</h3></div><PriceList items={hyperKnifePlans} /><p className={styles.priceNote}>サブスクコースあり</p></div>
+      <div><div className={styles.priceTitleRow}><h3>CARE &amp; WELLNESS</h3><p>代表メニュー</p></div><PriceList items={wellnessPlans} showDuration /></div>
+      <div><div className={styles.priceTitleRow}><h3>HYPER KNIFE</h3></div><PriceList items={hyperKnifePlans} showDuration /><p className={styles.subscriptionNote}>サブスクコースあり</p></div>
     </div></div>
     <p className={styles.priceNote} data-reveal="body" data-reveal-order="1">価格の税込・税別区分、最新料金は正式公開前に店舗確認が必要です。</p><a className={styles.goldButton} href="#reservation" data-reveal="body" data-reveal-order="1">体験・相談を予約する</a>
   </div></section>;
@@ -152,14 +172,52 @@ export function FirstVisitSection() {
 }
 
 export function AccessSection() {
-  return <section id="access" className={styles.access} aria-labelledby="access-title"><div className={styles.container}><div className={styles.accessGrid}>
-    <div className={styles.accessCopy}><p className={styles.eyebrow}>ACCESS</p><span className={styles.goldRule} aria-hidden="true" /><h2 id="access-title" data-reveal="heading"><span className={styles.accessTitleDesktop}><span>星川で、</span><span>自分の身体と向き合う。</span></span><span className={styles.accessTitleMobile}><span>星川で、</span><span>自分の体と向き合う。</span></span></h2><address data-reveal="body" data-reveal-order="1"><strong>LA LEGENDA</strong>神奈川県横浜市保土ケ谷区星川1-25-10<br />星川駅から徒歩約3分</address><p className={styles.accessNote} data-reveal="body" data-reveal-order="1">営業時間・定休日・正式な予約先は、公開前に店舗確認が必要です。</p></div>
-    <div className={styles.accessVisual} data-reveal="image-right" data-reveal-order="2"><Image src={imagePath("space_reception_wellness.webp")} alt="LA LEGENDAの受付とウェルネスエリア" width={1254} height={1254} unoptimized sizes="(max-width: 767px) 100vw, 50vw" /></div>
-  </div></div></section>;
+  return <section id="access" className={styles.access} aria-labelledby="access-title">
+    <div className={styles.container}>
+      <div className={styles.accessGrid}>
+        <div className={styles.accessCopy}>
+          <p className={styles.eyebrow}>ACCESS</p>
+          <span className={styles.goldRule} aria-hidden="true" />
+          <h2 id="access-title" data-reveal="heading"><span className={styles.accessTitleDesktop}><span>星川で、</span><span>自分の身体と向き合う。</span></span><span className={styles.accessTitleMobile}><span>星川で、</span><span>自分の身体と向き合う。</span></span></h2>
+          <address data-reveal="body" data-reveal-order="1"><strong>LA LEGENDA</strong>神奈川県横浜市保土ケ谷区星川1-25-10 Aletta星川1階</address>
+          <dl className={styles.accessMetaList} data-reveal="body" data-reveal-order="1">
+            <div><dt>最寄駅</dt><dd>星川駅から徒歩約3分</dd></div>
+            <div><dt>駐車場</dt><dd>GYM前 無料駐車場2台</dd></div>
+            <div><dt>営業時間</dt><dd>10:00〜20:00</dd></div>
+            <div><dt>定休日</dt><dd>不定休</dd></div>
+          </dl>
+          <a className={styles.mapLink} href={externalLinks.googleMaps} target="_blank" rel="noopener noreferrer" data-reveal="body" data-reveal-order="1">Google Mapsで見る<span aria-hidden="true">↗</span></a>
+        </div>
+        <figure className={styles.accessVisual} data-reveal="image-right" data-reveal-order="2">
+          <Image src={imagePath(accessImage.src)} alt={accessImage.alt} width={accessImage.width} height={accessImage.height} unoptimized sizes="(max-width: 767px) calc(100vw - 40px), 55vw" />
+          <figcaption>外観・入口のサンプルイメージ</figcaption>
+        </figure>
+        <div className={styles.instagramInfo} data-reveal="body" data-reveal-order="1">
+          <Image className={styles.instagramQr} src={imagePath("instagram_qr.png")} alt="LA LEGENDA公式Instagramを開くQRコード" width={592} height={592} unoptimized sizes="160px" />
+          <div><p>INSTAGRAM</p><a className={styles.mapLink} href={externalLinks.instagram} target="_blank" rel="noopener noreferrer">Instagramを開く<span aria-hidden="true">↗</span></a></div>
+        </div>
+      </div>
+      <section id="reservation" className={styles.reservationHub} aria-labelledby="reservation-title">
+        <div data-reveal="heading"><p className={styles.eyebrow}>RESERVATION</p><h2 id="reservation-title">ご予約・ご相談</h2></div>
+        <nav className={styles.reservationLinks} aria-label="外部サービスで予約・相談" data-reveal="body" data-reveal-order="1">
+          {reservationLinks.map(({ label, href }, index) => <a href={href} key={label} target="_blank" rel="noopener noreferrer"><span className={styles.reservationNumber} aria-hidden="true">0{index + 1}</span><span>{label}</span><span aria-hidden="true">↗</span></a>)}
+        </nav>
+      </section>
+    </div>
+  </section>;
 }
 
 export function FinalCtaSection() {
-  return <section id="reservation" className={styles.finalCta} aria-labelledby="reservation-title"><Image className={styles.finalCtaBackground} src={imagePath("space_training_floor_main.webp")} alt="" fill unoptimized sizes="100vw" /><div className={styles.finalCtaShade} aria-hidden="true" /><div className={styles.finalArc} aria-hidden="true" /><div className={styles.container}><p className={styles.eyebrow}>START FROM TODAY</p><span className={styles.goldRule} aria-hidden="true" /><h2 id="reservation-title" data-reveal="heading"><span className={styles.finalTitleDesktop}><span>これからの身体のために、</span><span>まずは今を知るところから。</span></span><span className={styles.finalTitleMobile}><span>これからの体のために</span><span>まずは今を知るところから。</span></span></h2><p className={styles.finalLead} data-reveal="body" data-reveal-order="1"><span>トレーニングも、身体のケアも。</span><span>あなたに合った一歩を<span className={styles.noWrap}>LA LEGENDA</span>で。</span></p><p className={styles.reservationNotice} data-reveal="body" data-reveal-order="1">正式な予約URL・<span className={styles.noWrap}>Instagramアカウント</span>へのリンクは、公開前の確認後に接続します。</p><a className={`${styles.goldButton} ${styles.pendingButton}`} href={externalLinks.line} aria-label="LINEで相談する" data-reveal="body" data-reveal-order="1">LINEで相談する</a></div></section>;
+  return <section id="final-cta" className={styles.finalCta} aria-labelledby="final-cta-title">
+    <Image className={styles.finalCtaBackground} src={imagePath("space_training_floor_main.webp")} alt="" fill unoptimized sizes="100vw" />
+    <div className={styles.finalCtaShade} aria-hidden="true" /><div className={styles.finalArc} aria-hidden="true" />
+    <div className={styles.container}>
+      <p className={styles.eyebrow}>START FROM TODAY</p><span className={styles.goldRule} aria-hidden="true" />
+      <h2 id="final-cta-title" data-reveal="heading"><span className={styles.finalTitleDesktop}><span>これからの身体のために、</span><span>まずは今を知るところから。</span></span><span className={styles.finalTitleMobile}><span>これからの身体のために、</span><span>まずは今を知るところから。</span></span></h2>
+      <p className={styles.finalLead} data-reveal="body" data-reveal-order="1"><span>トレーニングも、身体のケアも。</span><span>あなたに合った一歩を<span className={styles.noWrap}>LA LEGENDA</span>で。</span></p>
+      <a className={`${styles.goldButton} ${styles.finalButton}`} href="#reservation" data-reveal="body" data-reveal-order="1">体験・相談を予約する</a>
+    </div>
+  </section>;
 }
 
 export function Footer() {
