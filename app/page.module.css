@@ -183,6 +183,8 @@
 .priceRow { display: grid; padding: 16px 0; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; border-bottom: 1px solid rgb(255 255 255 / 24%); }
 .priceRow dt { display: flex; align-items: center; gap: 18px; font-family: var(--font-display); font-size: 18px; white-space: nowrap; }
 .priceRow dt span { color: var(--color-gold-light); font-size: 15px; }
+.wellnessPricing > div + div { margin-top: 32px; }
+.wellnessPricing .priceRow dt { white-space: normal; }
 .priceRow dd { font-family: var(--font-display); font-size: clamp(1.75rem, 2.5vw, 2.35rem); white-space: nowrap; }
 .priceNote { margin: 18px 0 24px; color: rgb(255 255 255 / 62%); font-size: 12px; }
 .price .goldButton { display: flex; width: fit-content; margin-inline: auto; }
