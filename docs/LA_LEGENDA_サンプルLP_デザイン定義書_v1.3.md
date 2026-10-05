@@ -1,12 +1,13 @@
-# LA LEGENDA サンプルLP デザイン定義書 v1.2
+# LA LEGENDA サンプルLP デザイン定義書 v1.3
 
 - 対象：LA LEGENDA（ラ レジェンダ）／保土ケ谷・星川
 - 種別：営業提案用サンプルLP
-- 作成日：2026-09-16
-- 前提文書：`LA LEGENDA サンプルLP 要件定義書 v1.1`
-- 次工程：リファレンス画像作成 → 画像素材整備 → Next.js / React / CSS実装 → QA
+- 初版作成日：2026-09-16
+- 更新日：2026-10-05
+- 前提文書：`LA LEGENDA サンプルLP 要件定義書 v1.2`
+- 次工程：リファレンス画像更新 → 画像素材整備 → Next.js / React / CSS実装 → QA
 - デザイン基準：デジタル庁デザインシステムのアクセシビリティ・情報設計・操作性の考え方を参照し、視覚表現はLA LEGENDA固有のブランドとして独自設計する
-- v1.2更新方針：v1.1の設計を維持し、Guest / Shootingセクションと人物・権利表現のルールを追加
+- v1.3更新方針：v1.2のアートディレクションを維持しつつ、店舗修正指示に合わせてコピー、Why、Care、InBody、Shooting、Menu & Price、Access、Reservationを更新
 
 ---
 
@@ -30,17 +31,33 @@
 
 **目標は「使いやすさはデザインシステム品質、見た目はLA LEGENDAそのもの」である。**
 
-## 0.1 v1.2での主な更新
+## 0.1 v1.3での主な更新
 
-v1.1のアートディレクション・実装仕様は維持し、以下を追加した。
+v1.2のアートディレクション・アクセシビリティ・実装仕様を維持し、`要件定義書 v1.2` と店舗修正指示に合わせて以下を更新した。
+
+- Heroメインコピーを **「ただ鍛えるのではない。身体を、人生ごと整える。」** に固定
+- `TRAIN` / `TRAIN + CARE` 系の表示を、該当箇所で `TRAINING` / `TRAINING + CARE` へ統一
+- `Why LA LEGENDA` の第4項目を `COMFORTABLE SPACE` に変更し、コピーを更新
+- Body Care / Wellnessに `DETOX / ハイパーナイフ` を追加し、医学的効能を示唆しない表示ルールを追加
+- InBodyを「数値競争」ではなく「自分に合う始め方を考える入口」として再設計
+- `Guest / Shooting` を特定人物の訴求から切り離し、YouTube等の撮影利用実績を示す補助セクションとして再定義
+- Menu & Priceにハイパーナイフ3メニューと「サブスクコースあり」の補足を追加し、情報量増加に対応するグルーピングを設計
+- Accessを「店舗情報＋地図」から「来店・予約ハブ」へ拡張し、営業時間・駐車場・Google情報・Instagram QRを追加
+- Reservationを Instagram / Hot Pepper Beauty / LINE の3導線へ分岐する仕様に変更
+- DesktopではQRを補助導線として使用し、Mobileでは直接リンクを優先するルールを追加
+- 正式URL・InBody非会員条件・ハイパーナイフのサブスク詳細・別送写真はTBCとして固定せず、差し替え可能な構造にする
+
+## 0.2 v1.2での主な更新
+
+v1.1のアートディレクション・実装仕様を維持し、以下を追加した。
 
 - `Space` の直後に `Guest / Shooting` セクションを追加
-- 芳賀セブンさんの来店・動画撮影実績を、著名人推薦ではなく「実際に使われている空間の補助証拠」として扱う
+- 撮影・来店実績を「実際に使われている空間の補助証拠」として扱う方針を追加
 - 人物写真・動画・外部投稿の権利確認ルールを明記
-- GuestセクションがHero級の視覚強度にならないよう、サイズ・色・情報量を制限
+- Guest / ShootingがHero級の視覚強度にならないよう、サイズ・色・情報量を制限
 - Mobileでも1ブロックに収め、ページの主軸を崩さない
 
-## 0.2 v1.1での主な更新
+## 0.3 v1.1での主な更新
 
 v1.0のアートディレクションは維持し、以下を実装仕様として追加・明確化した。
 
@@ -62,7 +79,7 @@ v1.0のアートディレクションは維持し、以下を実装仕様とし�
 
 ## 1.1 Visual Concept
 
-### **QUIET STRENGTH — Train. Care. Live Well.**
+### **QUIET STRENGTH — Training. Care. Live Well.**
 
 大人世代に向けた「強さ」と「整う感覚」を、派手なフィットネス広告ではなく、静かな上質さとして表現する。
 
@@ -472,8 +489,8 @@ CSS実装では、通常のCustom Propertyをmedia query条件へ直接使用し
 6. Care：静か / 柔らかい
 7. InBody：情報整理 / 精密
 8. Space：没入 / 写真
-9. Guest / Shooting：信頼補強 / 小〜中密度
-10. Price：整理 / 濃い
+9. Guest / Shooting：撮影実績の信頼補強 / 小〜中密度
+10. Price：情報整理 / 濃い
 11. First Visit：軽い / 順序
 12. Staff：人間味 / 写真
 13. FAQ：機能的
@@ -630,7 +647,7 @@ object-position
 | Space main | 1600×1000 | 900×1125 | PC 8:5 / SP 4:5 | 受付・全景 |
 | Space sub | 1000×1000 | 800×1000 | 1:1 / 4:5 | Detail |
 | Staff | 1000×1250 | 800×1000 | 4:5 | 人物 |
-| Guest / Shooting | 元画像依存 | 元画像依存 | 4:5 / 3:2等 | 撮影・来店実績 |
+| Guest / Shooting | 元画像依存 | 元画像依存 | 4:5 / 3:2等 | YouTube等の撮影利用実績 |
 | Access exterior | 1200×800 | 900×675 | 3:2 / 4:3 | 外観 |
 
 ### object-position管理
@@ -687,6 +704,7 @@ concept_training.webp
 concept_care.webp
 space_reception.webp
 space_training-floor.webp
+shooting_location.webp
 care_treatment.webp
 inbody_measurement.webp
 ```
@@ -869,27 +887,85 @@ Disabled：
 
 ## 7.6 Access
 
-構成：
-- 左：店舗情報
-- 右：地図またはアクセス画像
-- 「Google Mapsで見る」等の外部リンクを明示
-- 住所はコピー可能な通常テキストとして残す
-- 地図画像だけに住所情報を閉じ込めない
+Accessは単なる住所表示ではなく、**「場所を確認する → 来店条件を理解する → 予約方法を選ぶ」**までを一つの実用ブロックとして設計する。
+
+### 必須情報
+- 店名
+- 住所
+- 星川駅から徒歩約3分
+- GYM前 無料駐車場2台
+- 営業時間 10:00〜20:00
+- 不定休
+- Google Maps / Googleビジネスプロフィールへの導線
+- Instagram
+- Instagram QR（Desktop中心）
+- Reservation導線
+
+### Desktop
+第一候補は12-column内の **5 / 7 split**。
+
+Left 5col：
+- 店名・住所
+- Access facts（駅・駐車場・営業時間・定休日）
+- `Google Mapsで見る →`
+- Instagram / QR
+
+Right 7col：
+- Map embedまたは地図画像
+- 必要に応じ外観写真
+
+住所はコピー可能な通常テキストとして残し、地図画像・QRだけに情報を閉じ込めない。
+
+### Google情報
+- 評価値・口コミ数・レビュー本文は、正式確認できた場合のみ使用
+- 未確認の数値をデザイン上のダミーとして置かない
+- Google Maps / Googleビジネスプロフィールへの外部リンクを優先
+
+### Instagram QR
+- QRは正式Instagram URL確定後に生成
+- Desktopでは `QR + Instagramを開く` を併設
+- QRサイズは読み取り可能な実寸を確保し、装飾でFinder Patternを侵食しない
+- QRだけを唯一の導線にしない
+- MobileではQRを主役にせず、直接リンクボタンを優先
 
 ---
 
 ## 7.7 Reservation / Contact
 
-ページ内でCTAは繰り返すが、同じ強度で乱発しない。
+予約CTAは「外部予約先へ即遷移する1ボタン」ではなく、**Instagram / Hot Pepper Beauty / LINE の3つから利用者が選べる予約ハブ**へ接続する。
 
+### ページ内CTA
 推奨配置：
 - Header
 - Hero
-- Price後
+- Menu & Price後
+- Access / Reservation
 - Final CTA
 
-Mobile固定CTAは、画面を圧迫する場合は原則採用しない。  
-採用する場合は1ボタンのみ・高さ56px以内・閉じる必要がない構造。
+Header / Hero / Price / Final CTAのPrimary CTAは、原則として`#reservation`へアンカー移動させる。予約方法を1つに固定しない。
+
+### Reservation Hub
+3導線：
+1. Instagram
+2. Hot Pepper Beauty
+3. LINE友だち登録
+
+Desktop：
+- 3列カードを第一選択にしない
+- 1つの予約パネル内に3行の選択肢として整理するか、幅のある3ボタンを均等配置
+- 各導線に「用途」が正式情報として確認できない限り、勝手に「相談向け」「即時予約向け」等の役割を付けない
+
+Mobile：
+- 3導線を縦積み
+- 各ボタン高さ48〜56px
+- 画面下固定CTAは原則採用しない
+- 採用する場合も`予約方法を見る`の1ボタンだけとし、3ボタンを固定表示しない
+
+### 外部リンク
+- 外部サービスであることが分かるラベルまたはアイコンを付けてもよい
+- 新規タブを使用する場合は挙動を統一
+- 正式URL確定前はダミーURLを本番公開しない
+- クリック領域は44px以上
 
 ---
 
@@ -899,7 +975,7 @@ Mobile固定CTAは、画面を圧迫する場合は原則採用しない。
 - Logo
 - Address
 - Instagram
-- Reservation link
+- Reservation links（Instagram / Hot Pepper Beauty / LINE）
 - Sample注記（必要な場合）
 - Copyright
 
@@ -930,7 +1006,7 @@ Heroを邪魔せず、Scroll後は機能UIとして明確になる。
 ### 目的
 3〜5秒で
 「大人世代」「Training × Care」「上質な実店舗」
-を感じさせる。
+を感じさせ、ブランドの新しい中心コピーを最優先で認識させる。
 
 ### PC Layout
 12-column。
@@ -944,10 +1020,12 @@ Heroを邪魔せず、Scroll後は機能UIとして明確になる。
 
 Copy：
 - Eyebrow：`PERSONAL TRAINING × BODY CARE`
-- H1：2〜3行
+- H1：**「ただ鍛えるのではない。／身体を、人生ごと整える。」**
 - Lead：最大3行
-- CTA 2つ
+- CTA：Primary `体験・相談を予約する`、Secondary `メニューを見る`
 - 星川駅徒歩約3分等の短い実用情報を最下部に配置可
+
+H1は店舗修正指示による採用コピーのため、意味を変える言い換えをしない。Desktop / Mobileで改行位置のみ調整する。
 
 ### 写真
 第一候補：
@@ -962,9 +1040,11 @@ Goldは細線・Eyebrowのみ。
 ### Mobile
 - 1カラム
 - 最初にCopy、次にPhoto
+- H1は2〜3行。**文言は変更せず、自然な改行のみ調整**
 - H1を写真上へ重ねない案を第一候補
 - Hero image：`aspect-ratio: 4 / 5`
-- CTAはFull width×1、SecondaryはText linkでもよい
+- Primary CTAはFull width、SecondaryはText linkでもよい
+- Primary CTAは`#reservation`へ接続
 - Copyと画像の順序は維持しつつ、高さを100vh固定しない
 
 ### 前後変化
@@ -1061,25 +1141,26 @@ Training / Care / InBody / Spaceはこの後に独立セクションが続くた
 
 4枚の均一カードではなくEditorial index。
 
-例：
+固定表示：
 
 `01 PERSONAL`  
 一人ひとりの目的や状態に向き合う。
 
-`02 TRAIN + CARE`  
-鍛えることと、身体をケアすることを一か所で。
+`02 TRAINING + CARE`  
+トレーニングとマッサージ／ウェルネスケアを同じ場所で。
 
 `03 KNOW YOUR BODY`  
-InBodyなどを通して、まず今の状態を知る。
+InBody測定器などを通して、まず今の状態を知る。
 
-`04 REAL SPACE`  
-落ち着いた実店舗で、自分の身体に集中する。
+`04 COMFORTABLE SPACE`  
+快適な空間で自分の心と体を整える。
 
 ### Copy量
 
 - 見出し：1〜4語程度
 - 本文：**各30〜50文字程度を上限**
 - 詳細説明・料金・機能はここで入れない
+- `COMFORTABLE SPACE`だけを過剰にサロン的・リラックス特化へ見せない
 
 ### Layout
 
@@ -1094,6 +1175,7 @@ InBodyなどを通して、まず今の状態を知る。
 縦Index。
 各項目はTap不要の静的情報として見せる。
 写真は原則1枚以下。
+英字見出しが狭幅で不自然に折れないよう、`TRAINING + CARE` / `COMFORTABLE SPACE`は必要に応じ2行まで許容する。
 
 ### 前後変化
 
@@ -1138,7 +1220,7 @@ Whyの整理 → 1サービスへの没入。
 # 8.7 Body Care / Wellness
 
 ### 目的
-「トレーニングだけではない」を強く印象づける。
+「トレーニングだけではない」を強く印象づけると同時に、ハイパーナイフを既存のケアメニューの一部として自然に認識させる。
 
 ### PC Layout
 Trainingと左右を反転。
@@ -1148,16 +1230,28 @@ Trainingと左右を反転。
 - 背景：Warm paper
 - 写真はTrainingより余白のあるCrop
 
-下部に
-`RECOVER / RELAX / RESET`
-等の短いカテゴリーを横並びで置いてもよいが、サービス名の事実関係を変えない。
+下部のカテゴリ表示は、サービスの役割を整理する補助として以下を使用可。
+
+- `RECOVER`：スポーツマッサージ等
+- `RELAX`：アロマ／エサレン等
+- `DETOX`：ハイパーナイフ
+
+`DETOX`は**視覚上のカテゴリラベル**としてのみ使用し、「解毒」「老廃物排出」「治療」「疾病改善」等の医学的効能を説明文へ接続しない。
+
+### ハイパーナイフの見せ方
+- `DETOX`と`ハイパーナイフ`をセットで認識できるようにする
+- 他のCareメニューより極端に大きくしない
+- Before / After表現を作らない
+- 機器写真を使う場合は実際の提供設備・使用許可済み写真のみ
+- 料金詳細はMenu & Priceへ集約し、ここでは役割・存在を伝える
 
 ### 装飾
 背景に大きな英字を薄く置かない。
 Gold hairlineのみ。
 
 ### Mobile
-Text → Photo → 代表サービス3件。
+Text → Photo → 代表カテゴリ3件。
+`RECOVER / RELAX / DETOX`は横3列を無理に維持せず、2列＋1列または縦listへ変更可。
 
 ### 前後変化
 Trainingの硬質さから、柔らかい光と余白へ。
@@ -1167,29 +1261,40 @@ Trainingの硬質さから、柔らかい光と余白へ。
 # 8.8 InBody / Counseling
 
 ### 目的
-「まず身体を知る」という理性的な安心感を作る。
+「いきなり運動する」のではなく、**自分の状態を知り、自分に合う始め方を一緒に考えられる**という理性的な安心感を作る。
 
 ### PC Layout
 Light、精密、情報的。
 
 - 左4col：InBody機器写真
 - 中央4col：大きな短文
-- 右4col：測定情報
+- 右4col：確認済み情報
 
-表示可能な確認済み情報：
-- InBodyによる体成分測定
-- InBody公式設置施設一覧掲載
-- 誰でも測定可能
-- 要予約
-- 無料
+中心コピー方向：
+
+**数字にこだわるためでなく、
+自分に合う始め方を一緒に考える入口として。**
+
+表示してよい情報：
+- InBodyによる体成分測定が可能
+- 店舗修正指示：**会員の方はいつでも測定可能**
+
+TBC：
+- 非会員の利用可否
+- 要予約条件
+- 料金条件
+
+TBC項目は、デザイン上の空欄を埋めるために推測しない。正式確認前は表示自体を省略する。
 
 ### Visual
 GoldではなくInk / Stoneで整える。
 数値カードのような架空データを作らない。
+「体脂肪率○%」等のサンプル数値を演出目的で置かない。
 
 ### Mobile
-写真→説明→確認済み情報。
+写真→中心コピー→確認済み情報。
 表形式より短いdefinition list。
+「会員の方はいつでも測定可能」は1行〜2行の補助情報として明瞭に表示する。
 
 ### 前後変化
 感覚的なCare → 客観的・整理された情報へ。
@@ -1234,70 +1339,69 @@ InBodyの情報密度 → 写真の没入感。
 # 8.10 Guest / Shooting
 
 ### 目的
-Spaceセクションで形成した「実際に行ってみたい」という印象に対し、**実際にトレーニング・撮影の場として利用された事実**を補助的な信頼材料として加える。
+Spaceセクションで形成した「実際に行ってみたい」という印象に対し、**LA LEGENDAの設備・空間がYouTube等の撮影にも利用されていること**を補助的な信頼材料として加える。
 
-著名人・インフルエンサー訴求を主役にしない。
+特定人物の知名度・推薦・権威性を主役にしない。
 
 ### 情報上の前提
-確認できる事実は、**芳賀セブンさんが動画撮影のためLA LEGENDAへ来店したこと**までとする。
+表示する事実は、店舗が確認できる範囲の「YouTube等の撮影利用実績」までとする。
 
-「推薦」「愛用」「御用達」「常連」「通っている」等は視覚・コピー双方で示唆しない。
+人物名・フォロワー数・登録者数・推薦表現は使用しない。
 
 ### PC Layout
 `Space` から自然につながる小〜中規模のEditorial Feature。
 
-- Section height：500〜650px程度を上限
-- 左 5〜6col：使用許可を確認できた撮影・来店写真
+- Section height：480〜620px程度を上限
+- 左 5〜6col：使用許可を確認できた撮影時写真、または店舗・設備写真
 - 右 5〜6col：Eyebrow / H2 / Short copy
 - Full-width Hero型にはしない
-- 画面全面の人物写真にしない
+- 人物が写る場合でも画面全面にしない
 
-Text例：
+Text：
 
 `GUEST / SHOOTING`
 
-**芳賀セブンさん、動画撮影でLA LEGENDAへ。**
+**YouTube撮影
+LA LEGENDAで**
 
-本格的なトレーニング設備を備えた空間は、動画撮影の場としても利用されています。
+**本格的なトレーニング設備を備えた空間は、YouTube等の撮影の場としても利用されています。**
 
 ### Background
 第一候補：`#F5F1E8` または `#FBF9F4`
 
-SpaceがDarkの場合、GuestをLightにすることで  
-**Space（没入）→ Guest（信頼）→ Price（Dark）**  
+SpaceがDarkの場合、Guest / ShootingをLightにすることで  
+**Space（没入）→ Shooting（信頼補強）→ Price（Dark）**  
 のリズムを作る。
 
 ### 写真
 優先順位：
-1. LA LEGENDA側で掲載・使用許可を確認できる撮影時写真
-2. 権利確認ができない場合は人物写真を使用しない
-3. 第三者Instagram / YouTube等の画像をスクリーンショット転載しない
+1. 店舗から提供され、Web掲載許可を確認できた撮影時写真
+2. 使用許可済みの店舗・設備写真
+3. 使用可能素材がない場合は空間写真＋テキストのみ
 
-本人の身体・顔を極端に大きく見せず、  
-**「芳賀セブンさんのLP」ではなく「LA LEGENDAの空間実績」**  
-として構図を作る。
+第三者Instagram / YouTube等の画像・動画・サムネイルをスクリーンショット転載しない。
+人物が写る場合はWeb掲載権限を確認する。
 
 ### Visual Hierarchy
 主役：
 1. LA LEGENDAの空間・設備
-2. 来店・撮影という事実
-3. 人物名
+2. 撮影に利用されている事実
+3. 必要な場合のみ外部動画リンク
 
-人物名の文字サイズをH1級にしない。
+人物名を情報階層に含めない。
 
 ### Decorative
 - Gold hairline 1本程度
 - Legend Arc / Ringは原則ここでは使用しない
 - バッジ、王冠、スター、認証マーク風UIは禁止
+- YouTube公式ロゴに見える装飾を無断で自作しない
 
 ### CTA
-原則なし。
+予約CTAは置かない。
 
-外部動画・公式投稿へのリンクを置く場合のみ、  
-`動画・投稿を見る →`  
+店舗指定の公式動画・投稿へのリンクを置く場合のみ、  
+`撮影動画を見る →`  
 程度のText Linkとする。
-
-予約CTAは次のPriceまたはFinal CTAに任せる。
 
 ### Mobile
 1カラム。
@@ -1305,7 +1409,7 @@ SpaceがDarkの場合、GuestをLightにすることで
 順序：
 1. 写真
 2. `GUEST / SHOOTING`
-3. 見出し
+3. `YouTube撮影 / LA LEGENDAで`
 4. 2〜3行本文
 5. 必要な場合のみ外部Text Link
 
@@ -1313,33 +1417,35 @@ SpaceがDarkの場合、GuestをLightにすることで
 - 写真：4:5または元画像に適した比率
 - 文字は人物写真に重ねない
 - H2は28〜32px程度
-- 人物名が画面の主役になりすぎない
 - 1画面〜1.5画面程度に収める
 
 ### 前後セクションとの変化
 `Space` の写真没入から、一度Light背景で短く情報を整理し、次のDark `Menu & Price`へつなぐ。
 
 ### NG
-- 「芳賀セブン推薦」
-- 「芳賀セブンも通う」
-- 「トップ選手が認めた」
-- 「プロ御用達」
-- 権利未確認のInstagram / YouTube画像転載
-- 本人写真をHero級に使う
+- 特定人物名を主役にする
+- 「推薦」「愛用」「常連」「御用達」等の表現
 - フォロワー数・登録者数を信頼バッジとして強調
-- 著名人来店をLA LEGENDAの中心価値として扱う
+- 権利未確認のInstagram / YouTube画像・動画・サムネイル転載
+- 人物写真をHero級に使う
+- 撮影実績をLA LEGENDAの中心価値として扱う
 
 ---
 
 # 8.11 Menu & Price
 
 ### 目的
-料金不安を減らし、選択肢を理解させる。
+料金不安を減らし、「Personal Training」と「Care / Wellness」の選択肢を理解させる。メニュー追加後も**長い料金表に見せない**ことを重視する。
 
 ### PC Layout
 Dark section。
-左：Executive Training
-右：Wellness therapies
+
+上段：
+- 左 5〜6col：Executive Training
+- 右 6〜7col：Wellness / Care summary
+
+下段：
+- Wellness詳細を2グループに分けて整理
 
 Executive Trainingを主役にする。
 
@@ -1351,29 +1457,63 @@ Training pricing：
 
 表示方法：
 表または縦のPrice list。
-4枚のカードにしない。
-
+4枚の均一カードにしない。
 月4回等を勝手に「人気No.1」にしない。
 
-Wellness：
-代表メニューを4件程度。
-全メニューを詰め込まない。
+### Wellness / Care grouping
+情報量増加に対応するため、**表示上の整理**として次の2グループに分ける。
+
+`CARE & WELLNESS`
+- スポーツマッサージ 30分 ¥4,620
+- アロマリラックス 70分 ¥14,000
+- スポーツアロマ 70分 ¥14,000
+- エサレンBODYワーク 70分 ¥16,000
+
+`HYPER KNIFE`
+- お顔 70分 ¥11,000
+- お腹＆トレ 70分 ¥19,000
+- お体＆トレ 100分 ¥24,000
+
+グループ名は**UI上の整理ラベル**であり、店舗の正式商品体系を勝手に定義するものではない。
+
+ハイパーナイフには、料金リストの近くへ小さく  
+**「サブスクコースあり」**  
+と表示してよい。
+
+サブスクの料金・回数・対象メニュー・契約条件はTBCのため表示しない。
+
+### Layout rules
+- 7メニューを7枚のカードにしない
+- 料金名と価格の間をrule / gridで整理する
+- 1行の高さを詰めすぎず、44px程度以上の読み取り余白を確保
+- `HYPER KNIFE`だけを巨大な広告ブロックにしない
+- 金額の桁位置を揃え、価格比較がしやすい構造にする
+- 税込／税別が未確認の場合、こちらで補完表示しない
 
 ### Typography
 価格数字は大きめ。
 通貨・回数はBody font。
 Goldは見出し・rule程度。
+カテゴリ名はEyebrow相当でよい。
 
 ### CTA
-Section下部にPrimary CTA。
+Section下部にPrimary CTA `予約方法を見る` または `体験・相談を予約する`。
+`#reservation`へ接続する。
 
 ### Mobile
-Training → Wellnessの順。
-横スクロール表は禁止。
-価格は2列definition list。
+Training → Care & Wellness → Hyper Knifeの順。
+
+- 横スクロール表は禁止
+- 価格は2列definition list
+- 7メニューをカード化せず、罫線付きlistで圧縮
+- `サブスクコースあり`はHyper Knifeグループ直下に補足
+- 各グループ間：32〜40px
+- 1グループ内の行間：12〜16px
+
+ページ全体が縦長になりすぎる場合でも、料金をAccordionへ隠すことは第一選択にしない。主要料金は初見で見える状態を優先する。
 
 ### 前後変化
-Spaceの写真 → 整理されたDark情報。
+ShootingのLight・短い情報 → 整理されたDark情報。
 
 ---
 
@@ -1462,38 +1602,80 @@ Tap target 56px以上。
 # 8.15 Access
 
 ### 目的
-来店可能性を現実の行動に変える。
+所在地・営業情報・来店手段・予約手段を1か所で整理し、**「場所が分かる」だけでなく「そのまま予約できる」**状態へつなげる。
 
 ### PC Layout
-6 / 6 split。
+Access本体は **5 / 7 split** を第一候補とする。
 
 Left：
-- 店名
-- 住所
+- LA LEGENDA
+- 神奈川県横浜市保土ケ谷区星川1-25-10 Aletta星川1階
 - 星川駅から徒歩約3分
-- 予約リンク
-- Instagram
+- GYM前 無料駐車場2台
+- 営業時間 10:00〜20:00
+- 不定休
+- `Google Mapsで見る →`
 
 Right：
 - Map embedまたは地図画像
 - 必要に応じ外観写真
 
+Access本体の直下、または同一セクション後半に**Reservation Hub**を置く。
+
+### Instagram / Google
+補助情報ブロック：
+- Googleビジネスプロフィールへのリンク
+- Instagramへのリンク
+- Instagram QR（Desktop）
+
+Googleの評価値・口コミ数は正式確認できる場合のみ表示する。
+
+Instagram QRはカード化しすぎず、`Instagram` ラベル＋QR＋直接リンクの小さな補助ブロックとする。
+
+### Reservation Hub
+見出し例：
+**ご予約・ご相談**
+
+3導線：
+1. Instagram
+2. Hot Pepper Beauty
+3. LINE友だち登録
+
+PCでは一つのSurface内に3つの明確な選択肢として配置する。
+3枚の大きなカードに分離してセクションを肥大化させない。
+
 ### Background
 Stone。
+Reservation HubはPaperまたはInkでSurfaceを切り替えてもよい。
 
 ### CTA
-「地図を見る」「体験・相談を予約する」
+Access本体：`Google Mapsで見る`
+Reservation Hub：3つの外部予約リンク
 
 ### Mobile
-情報→Map。
-Map高さ240〜300px。
+順序：
+1. 店舗情報
+2. Map
+3. `Google Mapsで見る`
+4. Reservation Hub
+5. Instagram等の補助導線
+
+- Map高さ240〜300px
+- 予約3導線は縦積み
+- Instagram QRは原則非表示または補助扱い。**直接リンクを優先**
+- 住所・営業時間等をQRや画像内だけに入れない
+- 外部リンクは44px以上のTap target
+
+### 情報量制御
+Accessが長くなりすぎる場合でも、住所・駅・駐車場・営業時間・予約導線は削らない。
+Google補助情報やQRの視覚強度を下げて調整する。
 
 ---
 
 # 8.16 Final CTA
 
 ### 目的
-ページ全体を一つの行動へ収束。
+ページ全体を一つの行動へ収束し、予約方法の選択へ進ませる。
 
 ### PC
 Dark full-width。
@@ -1501,8 +1683,13 @@ Dark full-width。
 Gold line。
 CTA 1つを強く。
 
-例の方向性：
-「これからの身体のために、まずは今を知るところから。」
+コピー方向：
+**「これからの身体のために、まずは今を知るところから。」**
+
+Primary CTA：
+**「体験・相談を予約する」** または **「予約方法を見る」**
+
+CTAは外部サービスへ直接飛ばさず、原則`#reservation`の3導線へ接続する。
 
 背景に写真を入れる場合は10〜20%程度の非常に薄い存在感。
 基本は文字と余白を主役にする。
@@ -1510,10 +1697,10 @@ CTA 1つを強く。
 ### Mobile
 H2 30〜34px。
 CTA full width。
-Secondary Instagram linkは下にText link。
+Secondaryに特定サービスだけを優先して置かず、予約方法はReservation Hubで選択させる。
 
 ### 前後変化
-実用的なAccess → 感情的な収束。
+実用的なAccess / Reservation → 感情的な収束。
 
 ---
 
@@ -1639,19 +1826,23 @@ Mobileユーザーは、
 
 ### Guest / Shooting
 - 2column → Photo + short text
+- 特定人物を主役にしない
 - 人物写真を背景全面にしない
-- コピーを2〜3行へ圧縮
-- 外部リンクは必要な場合のみText Link
+- `YouTube撮影 / LA LEGENDAで`を2行程度で明確化
+- 外部リンクは店舗指定URLがある場合のみText Link
 
 ### Price
-- 2column → Training → Wellness
+- 2column → Training → Care & Wellness → Hyper Knife
+- 7メニューをカード化しない
 - Tableを横スクロールさせない
 
 ### First Visit
 - Horizontal → Vertical timeline
 
 ### Access
-- Text → Map
+- 店舗情報 → Map → Reservation Hub
+- 予約3導線は縦積み
+- Instagram QRより直接リンクを優先
 
 ## 10.3 Mobile Typography
 
@@ -1746,7 +1937,16 @@ Panelに対応するID。
 「こちら」「詳しくはこちら」だけを乱用せず、
 リンク単体でも目的が分かる文言にする。
 
-## 11.9 Horizontal Overflow
+## 11.9 QR / External Reservation
+
+- QRコードを唯一のナビゲーション手段にしない
+- QRと同じ遷移先の通常リンクを必ず併設する
+- MobileではQRより直接リンクを優先する
+- 外部予約先のリンク文言はサービス名を含め、リンク単体でも目的が分かるようにする
+- アイコンだけの予約導線にしない
+- `target="_blank"`を使用する場合は`rel="noopener noreferrer"`を付与する
+
+## 11.10 Horizontal Overflow
 
 以下をQA：
 - `100vw` + scrollbar
@@ -1758,7 +1958,7 @@ Panelに対応するID。
 
 `overflow-x: hidden`で問題を隠す前に原因を修正する。
 
-## 11.10 Anchor Navigation / Sticky Header
+## 11.11 Anchor Navigation / Sticky Header
 
 Sticky Headerがページ内リンクの到達位置を隠さないよう、主要Sectionへ`scroll-margin-top`を設定する。
 
@@ -1778,19 +1978,19 @@ Headerの最終高さを変更した場合は数値も更新する。
 
 アンカー移動後、見出しが画面上端に密着しないことをQAする。
 
-## 11.11 Zoom / Text Resize
+## 11.12 Zoom / Text Resize
 
 200%程度の文字拡大でも、
 重要情報・CTAが欠落しない構造を目指す。
 
-## 11.12 Carousel
+## 11.13 Carousel
 
 重要コンテンツをCarousel内だけに置かない。
 
 Space写真はGridを第一選択とする。
 自動再生Carouselは採用しない。
 
-## 11.13 Static Export / GitHub Pages Implementation
+## 11.14 Static Export / GitHub Pages Implementation
 
 - Asset pathは`basePath` / `assetPrefix`の有無で壊れない構造にする
 - 画像URLをコード内に無秩序に直書きせず、Asset mapまたはComponent propsに集約する
@@ -1942,17 +2142,18 @@ Trainingの本格性を残す。
 - 生成AI特有の過剰な肌補正
 - 写真間で店舗の色が大きく変わる
 
-## 13.7 著名人・Guest表現の過剰化
+## 13.7 Shooting / 外部実績表現の過剰化
 
 禁止：
-- 来店事実を推薦・愛用へ変換する
-- 本人の知名度をHeroやCTAの中心にする
+- 特定人物の知名度をHeroやCTAの中心にする
+- 来店・撮影事実を推薦・愛用へ変換する
 - フォロワー数・登録者数を権威付けへ利用する
 - 権利未確認のSNS画像・動画・サムネイルを転載する
 - 「認めた」「御用達」「トップ選手も通う」等の未確認表現
-- GuestセクションをPriceやTrainingより大きくする
+- ShootingセクションをPriceやTrainingより大きくする
+- YouTube風の赤・再生ボタン・派手なサムネイル表現をブランドの主役にする
 
-Guestはあくまで**LA LEGENDAの空間・設備が実際に使われていることを示す補助要素**として扱う。
+Shootingはあくまで**LA LEGENDAの空間・設備が撮影にも利用されていることを示す補助要素**として扱う。
 
 ---
 
@@ -1964,17 +2165,18 @@ Guestはあくまで**LA LEGENDAの空間・設備が実際に使われている
 
 1. Hero
 2. Problem + Concept
-3. Training
-4. Care
-5. Space
-6. Guest / Shooting
-7. Menu & Price
-8. Final CTA
+3. Why LA LEGENDA
+4. Training
+5. Care / Hyper Knife
+6. InBody
+7. Space
+8. Guest / Shooting
+9. Menu & Price
+10. Access / Reservation Hub
+11. Final CTA
 
 必要に応じ：
-9. Why LA LEGENDA
-10. InBody
-11. First Visit / FAQ / Access
+12. First Visit / FAQ
 
 ## Desktop Reference
 - 1440px幅想定
@@ -2002,14 +2204,17 @@ Guestはあくまで**LA LEGENDAの空間・設備が実際に使われている
 
 ## 整合している点
 
+- 前提文書は`LA LEGENDA サンプルLP 要件定義書 v1.2`
 - コア：大人世代 × Personal Training × Body Care
-- Primary CTA：体験・相談
+- Hero採用コピー：**ただ鍛えるのではない。身体を、人生ごと整える。**
+- Why：`PERSONAL / TRAINING + CARE / KNOW YOUR BODY / COMFORTABLE SPACE`
+- Body Care：`DETOX / ハイパーナイフ`を追加
+- InBody：「会員の方はいつでも測定可能」までを確認済み情報として扱う
+- Shooting：特定人物ではなくYouTube等の撮影利用実績を補助的に扱う
+- Menu & Price：ハイパーナイフ3メニューと「サブスクコースあり」を反映
+- Access：住所詳細、駐車場2台、営業時間10:00〜20:00、不定休を反映
+- Reservation：Instagram / Hot Pepper Beauty / LINEの3導線
 - 実店舗写真を中心に使用
-- 口コミはサンプル段階で原則不使用
-- 料金は代表料金のみ整理
-- InBodyを「今の身体を知る入口」として扱う
-- Guest / Shootingは来店・撮影の確認事実のみを扱い、推薦表現にしない
-- 著名人関連素材は権利確認前提
 - noindex / nofollow前提
 - Next.js / React / Static Export前提
 - 過度な効果断定をしない
@@ -2017,27 +2222,29 @@ Guestはあくまで**LA LEGENDAの空間・設備が実際に使われている
 
 ## 未確定のためデザイン側で固定しないもの
 
-- 正式な体験料金
-- 正式な体験時間
-- 最新営業時間
-- 定休日
-- 駐車場
+- InBodyの非会員利用可否
+- InBodyの要予約条件
+- InBodyの料金条件
+- ハイパーナイフのサブスク料金
+- ハイパーナイフのサブスク利用回数・対象メニュー・契約条件
+- Googleビジネスプロフィールの正式URL・表示可能項目
+- Instagramの正式予約URL／QR生成対象URL
+- Hot Pepper Beautyの正式URL
+- LINE友だち登録の正式URL
+- 別送予定の写真素材
+- 正式な体験料金・体験時間
 - 支払い方法
-- スタッフ人数
-- スタッフ名・資格・経歴
+- スタッフ人数・氏名・資格・経歴
 - キャンセルポリシー
-- 正式な予約URL
 - ペア割引の最新条件
-- 芳賀セブンさん関連の写真・動画・サムネイル等の掲載許可
-- 芳賀セブンさんの外部投稿・動画へリンクする場合の対象URL
 
 これらは「見た目の枠」を作ることはできるが、内容を推測して埋めない。
 
 ## 矛盾について
 
-現時点で、要件定義書と本デザイン定義書の間に重大な矛盾はない。
+現時点で、要件定義書 v1.2 と本デザイン定義書 v1.3 の間に重大な矛盾はない。
 
-ただし要件定義書の「Staff / Expertise」と「FAQ」は、情報確認状況に応じて**セクション省略可能**とする。未確認情報を埋めるためだけにセクションを残すことはしない。
+ただし、外部URL・QR・サブスク詳細・InBody非会員条件はTBCのため、実装時に仮の事実を作らない。Staff / FAQは情報確認状況に応じて**セクション省略可能**とする。
 
 ---
 
@@ -2070,6 +2277,11 @@ AI画像や抽象装飾より「実際にここで受けられる体験」を優
 アクセシビリティはブランド価値の一部として扱う。
 
 加えて、ロゴの円形構造を起点とした**Legend Arc / Ring**を限定的に使い、汎用的な高級ウェルネスLPとの差を作る。ただし、ブランド固有性はあくまで実店舗写真・Training × Careの対比・余白が主役で、モチーフは署名程度に留める。
+
+## 6. 予約手段が増えても、CTAの強度を乱立させない
+
+Instagram / Hot Pepper Beauty / LINEは、どれか1つを勝手に主役にせず、ページ内の主要CTAはReservation Hubへ集約する。  
+Accessでは地図・店舗情報・予約手段を一続きに整理し、「来店できる」から「予約できる」へ自然につなげる。
 
 ---
 
