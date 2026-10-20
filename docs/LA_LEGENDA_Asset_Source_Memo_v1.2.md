@@ -1,6 +1,6 @@
 # LA LEGENDA Asset / Source Memo v1.2
 
-- Updated: 2026-10-05
+- Updated: 2026-10-06（Phase C-2：店舗提供写真の反映）
 - Purpose: 実装・QA前のAsset / Source管理最新版
 - Basis:
   - `LA_LEGENDA_サンプルLP_要件定義書_v1.2.md`
@@ -11,6 +11,8 @@
   - 店舗から受領した修正指示
 
 ---
+
+> 2026-10-21追記：予約3媒体のURL・税込区分・初回料金・支払い・予約変更／キャンセル条件は、`LA_LEGENDA_正式情報反映_実装指示書_20261020.md`を優先。下記の予約URLとInstagram QR生成先は正式情報に同期済み。
 
 ## 0. この文書の位置づけ
 
@@ -76,19 +78,25 @@ v1.1の権利・出所管理ルールを維持しつつ、2026-10-05時点の最
 |---|---|---|---|---|---|
 | `hero_personal_training_desktop.webp` | Hero | 主役 | G | PC | 新規実写受領まではサンプルで継続可 |
 | `hero_personal_training_mobile.webp` | Hero | 主役 | G | Mobile | 新規実写受領まではサンプルで継続可 |
-| `training_personal_session.webp` | Personal Training / Concept | 主役 | G | PC / 共通 | 新規実写受領まではサンプルで継続可 |
-| `training_personal_session_mobile.webp` | Personal Training | 主役 | G | Mobile | 新規実写受領まではサンプルで継続可 |
-| `care_bodywork_wide.webp` | Body Care | 主役 | G | PC | 新規実写受領まではサンプルで継続可 |
-| `care_bodywork_mobile.webp` | Body Care | 主役 | G | Mobile | 新規実写受領まではサンプルで継続可 |
+| `training_personal_session.webp` | Concept | 主役 | G | 共通 | Conceptは構図維持のため継続。Personal Trainingは店舗実写へ差し替え済み |
+| `training_personal_session_mobile.webp` | 旧Personal Training | 未使用 | G | Mobile | 店舗実写へ差し替え済み。ファイルは保持 |
+| `care_bodywork_wide.webp` | 旧Body Care | 未使用 | G | PC | 店舗実写へ差し替え済み。ファイルは保持 |
+| `care_bodywork_mobile.webp` | Concept | 補助 | G | 共通 | Conceptは継続。Body Careは店舗実写へ差し替え済み |
 | `inbody_counseling.webp` | InBody / Counseling | 主役 | G | 共通 | 条件表記は画像ではなくテキスト側で最新化 |
-| `first_visit_reception_guidance.webp` | First Visit | 主役 | G | 共通 | 新規実写受領まではサンプルで継続可 |
-| `access_exterior_entrance.webp` | Access | 外観・入口候補 | G | 共通 | 実外観との一致を確認して採用。正式版は実写優先 |
+| `first_visit_reception_guidance.webp` | 旧First Visit | 未使用 | G | 共通 | 店舗実写へ差し替え済み。ファイルは保持 |
+| `access_exterior_entrance.webp` | 旧Access | 未使用 | G | 共通 | 店舗提供の外観実写へ差し替え済み。ファイルは保持 |
 | `space_training_floor_main.webp` | Space / Shooting / Final CTA | メイン | E | 共通 | 権利確認済み公式素材との同一性確認まではE |
 | `space_reception_wellness.webp` | Space | サブ | E | 共通 | 同上 |
 | `space_dumbbell_area.webp` | Space | サブ | E | 共通 | 同上 |
 | `space_dumbbell_detail.webp` | Space | Detail | E | Optional | 同上 |
 | `care_treatment_detail.webp` | Care / Concept | Detail | E | 共通 | 同上 |
 | `care_aromatherapy_oils_detail.webp` | Care | Detail | E | Optional | 同上 |
+| `personal_training_real.webp` | Personal Training | 主役 | A | 共通 | 店舗提供・使用許可済み。画像自体の追加加工禁止 |
+| `body_care_massage_real.webp` | Body Care | 主役 | A | 共通 | 同上 |
+| `first_visit_counseling_real.webp` | First Visit | 主役 | A | 共通 | 同上 |
+| `access_exterior_real.webp` | Access | 外観・入口 | A | 共通 | 同上 |
+| `training_mobility_real.webp` | 未使用 | 候補 | A | 共通 | Conceptの横長枠では動作が切れるため未採用 |
+| `counseling_real.webp` | 未使用 | 候補 | A | 共通 | カウンセリング写真。InBody用途に使用しない |
 | `brand/la_legenda_header_logo.png` | Header | Brand | G | 共通 | サンプル用Web素材として使用可。正式版は正式ロゴデータ確認推奨 |
 | `brand/la_legenda_footer_logo.png` | Footer | Brand | G | 共通 | 同上 |
 | `brand/la_legenda_primary_logo.png` | Brand | Primary logo | G | 共通 | 同上 |
@@ -108,18 +116,16 @@ v1.1の権利・出所管理ルールを維持しつつ、2026-10-05時点の最
 ## Concept
 
 - TRAINING：`training_personal_session.webp`
-- CARE：`care_treatment_detail.webp` または `care_bodywork_wide.webp`
+- CARE：`care_bodywork_mobile.webp`（現状維持）
 - `care_treatment_detail.webp` の利用権が未確認の場合は、G素材への切り替えを優先する
 
 ## Personal Training
 
-- PC：`training_personal_session.webp`
-- Mobile：`training_personal_session_mobile.webp`
+- PC / Mobile：`personal_training_real.webp`（店舗提供・使用許可済み、Status A）
 
 ## Body Care / Wellness
 
-- PC：`care_bodywork_wide.webp`
-- Mobile：`care_bodywork_mobile.webp`
+- PC / Mobile：`body_care_massage_real.webp`（店舗提供・使用許可済み、Status A）
 - Detail：`care_aromatherapy_oils_detail.webp` / `care_treatment_detail.webp` はEのため、権利確認前に新たな主役素材へ格上げしない
 - `DETOX / ハイパーナイフ` のカテゴリ追加はテキストUI側で行い、未確認の効果表現を画像・コピーへ付与しない
 
@@ -154,19 +160,14 @@ v1.1の権利・出所管理ルールを維持しつつ、2026-10-05時点の最
 
 ## First Visit
 
-- `first_visit_reception_guidance.webp`
+- `first_visit_counseling_real.webp`（店舗提供・使用許可済み、Status A）
 
 ## Access
 
-- 第一候補：`access_exterior_entrance.webp`
-- 現行の `space_reception_wellness.webp` より、入口・来店イメージが伝わる素材を優先する
-- `access_exterior_entrance.webp` はGのため、実店舗外観との一致を確認してサンプル利用する
-- 新規の実外観・入口写真が届いた場合は、掲載許可確認後に優先差し替え
-
-## Final CTA
-
-- 現行の店舗空間写真を背景に使用可
-- 第三者人物・外部媒体画像は使わない
+- `access_exterior_real.webp`（店舗提供・使用許可済み、Status A）
+- alt：`LA LEGENDAの外観と入口`
+- 実際の外観・入口写真を使用し、サンプルイメージのcaptionは削除済み
+- 画像自体は加工せず、CSSの表示調整のみ
 
 ---
 
@@ -176,9 +177,9 @@ LPの外部リンク・情報確認元を以下のとおり管理する。
 
 | Source ID | Source | URL / Target | Status | Usage |
 |---|---|---|---|---|
-| SRC-01 | LA LEGENDA Instagram | `https://www.instagram.com/ne_ld1999/?hl=ja` | C / 確定 | 予約導線、公式プロフィール、QR生成元 |
-| SRC-02 | Hot Pepper Beauty | `https://beauty.hotpepper.jp/kr/slnH000813087/?cstt=1` | D / 確定 | 予約導線、公開情報照合 |
-| SRC-03 | LINE | `https://line.me/R/ti/p/@240pmolc?ts=06281635&oat_content=url` | B相当 / 確定リンク | 予約・相談導線 |
+| SRC-01 | LA LEGENDA Instagram | `https://www.instagram.com/ne_ld1999/` | C / 確定 | 予約導線、公式プロフィール、QR生成元 |
+| SRC-02 | Hot Pepper Beauty | `http://b.hpr.jp/kr/sd/H000813087` | D / 確定 | 予約導線、公開情報照合 |
+| SRC-03 | LINE | `https://lin.ee/njpSzY5` | B相当 / 確定リンク | 予約・相談導線 |
 | SRC-04 | Google Maps | 受領済みGoogle Maps検索URL | B相当 / 確定リンク | Access / `Google Mapsで見る` |
 | SRC-05 | Local Style Yokohama | `https://localstyle-yokohama.jp/hodogaya-ku/beauty_list/facilities/10335` | D / 参考 | 店舗・代表・サービス理解の補助。本文の無断転載はしない |
 | SRC-06 | InBody公式施設情報 | InBody公式掲載情報 | B | 公開情報照合のみ。店舗最新修正と差分あり |
@@ -197,7 +198,7 @@ LPの外部リンク・情報確認元を以下のとおり管理する。
 
 Instagram QRは以下の正式プロフィールURLをエンコードして**実装時に生成**する。
 
-`https://www.instagram.com/ne_ld1999/?hl=ja`
+`https://www.instagram.com/ne_ld1999/`
 
 ### ルール
 
@@ -211,7 +212,20 @@ Instagram QRは以下の正式プロフィールURLをエンコードして**実
 
 # 6. New Client Photos
 
-店舗から別送予定の写真は、現時点では**受領待ち**とする。
+2026-10-06、店舗提供の原本6枚を受領済み。Phase C-2のユーザー指示により、人物を含むLP掲載用素材として使用許可済み（Status **A**）。
+
+| 原本（tmp-assets/） | Web asset（public/images/） | 用途・実装状態 |
+|---|---|---|
+| `AAA_0061.JPG` | `first_visit_counseling_real.webp` | First Visit（採用） |
+| `AAA_0093.JPG` | `training_mobility_real.webp` | 未使用：Conceptの横長枠では動作が切れるため現状維持 |
+| `cc666b93-c658-49fa-83fb-ded086b11ad7.jpg` | `counseling_real.webp` | 未使用：カウンセリング写真。InBody用途には使用しない |
+| `photo_0009.jpg` | `body_care_massage_real.webp` | Body Care（採用） |
+| `photo_0075.jpg` | `access_exterior_real.webp` | Access（採用） |
+| `photo_0081.jpg` | `personal_training_real.webp` | Personal Training（採用） |
+
+原本は上書きせず、quality 90のWebPとして元解像度・アスペクト比・ICCプロファイルを保持して書き出した。色・明るさ等の補正やクロップ、生成補完は行っていない。施設写真は修正せず使用する店舗指示を反映し、実装ではCSSのobject-fit / object-position / responsive調整のみ行う。
+
+旧仮素材はファイルを保持する。差し替えた4箇所は店舗実写として扱い、Accessのサンプル表記は削除。その他のセクションは今回の対象外。
 
 受領後は次の順で管理する。
 
@@ -308,7 +322,7 @@ Instagram QRは以下の正式プロフィールURLをエンコードして**実
 - [x] LINE URLを確定
 - [x] Google Maps URLを確定
 - [x] 特定人物名をGuest / Shootingから削除する方針を確定
-- [ ] 新規写真を受領
+- [x] 新規写真6枚を受領（2026-10-06、店舗提供・使用許可済み）
 - [ ] E素材の権利・出所を必要範囲で再確認
 - [ ] `access_exterior_entrance.webp` と実外観の一致を確認
 
@@ -338,5 +352,5 @@ Instagram QRは以下の正式プロフィールURLをエンコードして**実
 
 2026-10-05時点では、**リンク・テキスト・構造の修正は実装開始可能**。
 
-新規写真は受領待ちのため、現行G素材・必要最小限のE素材で仮実装を維持し、受領後に権利確認済み実写へ差し替える。
+2026-10-06のPhase C-2でAccess / Personal Training / Body Care / First Visitを店舗提供・使用許可済み実写へ差し替え。Conceptを含むその他のセクションは構図・今回の変更範囲に従って維持する。
 

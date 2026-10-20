@@ -6,25 +6,25 @@ import styles from "../page.module.css";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const imagePath = (name: string) => `${basePath}/images/${name}`;
 const externalLinks = {
-  instagram: "https://www.instagram.com/ne_ld1999/?hl=ja",
-  hotPepper: "https://beauty.hotpepper.jp/kr/slnH000813087/?cstt=1",
-  line: "https://line.me/R/ti/p/@240pmolc?ts=06281635&oat_content=url",
+  instagram: "https://www.instagram.com/ne_ld1999/",
+  hotPepper: "http://b.hpr.jp/kr/sd/H000813087",
+  line: "https://lin.ee/njpSzY5",
   googleMaps: "https://www.google.com/maps?sca_esv=ec734b9ba2f66c6f&rlz=1C5LDPL_enJP1194JP1202&output=search&q=LA+LEGENDA&source=lnms&fbs=ABfTbFWgnFHONIVUY2_FI1XmLOwBj8exaHm1K20WHOGaMeonhMV3kP2WYeEnGxffUz-KC66Q6yr12oVdM0HlG2G_7TnUGwA0bButCWrzdsg55x1xYALlb86iYKrIOCIwJOo9tkRs5H1Nmc2AE9VFIBZTl4FlxLVUDRBwkrtTvGVmyIJzrgBhsHeEnUiKrsStZVWdY2IZ734kcU1k4QO0yaIKKd2efj8CEZIxar5tSH4f0ipeGIKZ2SU&entry=mc&ved=1t:200715&ictx=111",
   interview: "https://localstyle-yokohama.jp/hodogaya-ku/beauty_list/facilities/10335",
 };
 
 const reservationLinks = [
-  { label: "Instagram", href: externalLinks.instagram, icon: Instagram },
-  { label: "Hot Pepper Beauty", href: externalLinks.hotPepper, icon: CalendarCheck2 },
-  { label: "LINE", href: externalLinks.line, icon: MessageCircle },
+  { label: "LINEで予約・相談", href: externalLinks.line, icon: MessageCircle },
+  { label: "Instagramで予約・相談", href: externalLinks.instagram, icon: Instagram },
+  { label: "Hot Pepper Beautyで予約", href: externalLinks.hotPepper, icon: CalendarCheck2 },
 ];
 
-// 営業提案用の外観候補。店舗提供写真の受領後にここを差し替える。
+// 店舗提供・使用許可済みの外観写真。
 const accessImage = {
-  src: "access_exterior_entrance.webp",
-  alt: "LA LEGENDAの店舗外観・入口（サンプル用イメージ）",
-  width: 1536,
-  height: 1024,
+  src: "access_exterior_real.webp",
+  alt: "LA LEGENDAの外観と入口",
+  width: 2048,
+  height: 1536,
 };
 
 const trainingPlans = [
@@ -47,12 +47,17 @@ const hyperKnifePlans = [
   { number: "07", label: "ハイパーナイフお体＆トレ 100分", price: "¥24,000" },
 ];
 
+const firstVisitPlans = [
+  { label: "カウンセリングのみ", duration: "30分", price: "¥1,000" },
+  { label: "トレーニング込み", duration: "70分", price: "¥10,000" },
+];
+
 const firstVisitSteps = [
   ["01", "予約・相談", "まずは現在の悩みや、始めたいことをお聞かせください。"],
   ["02", "カウンセリング", "これまでの運動経験や生活のことを丁寧に確認します。"],
   ["03", "身体・目的の確認", "今の状態と、これから目指したい身体を一緒に整理します。"],
-  ["04", "体験", "相談した内容をもとに、自分に合う進め方を確かめます。"],
-  ["05", "今後の利用を相談", "続け方は体験後に相談。無理のない選択肢を考えます。"],
+  ["04", "トレーニング（ご希望の方）", "トレーニング込みの方は、相談した内容をもとに、自分に合う進め方を確かめます。"],
+  ["05", "今後の利用を相談", "続け方は初回利用後に相談。無理のない選択肢を考えます。"],
 ];
 
 function SectionHeading({ eyebrow, title, light = false, id }: { eyebrow: string; title: ReactNode; light?: boolean; id?: string }) {
@@ -118,7 +123,7 @@ export function WhySection() {
 
 export function TrainingSection() {
   return <section id="service" className={styles.training} aria-labelledby="training-title">
-    <picture className={styles.serviceVisual} data-reveal="image-left" data-reveal-order="2"><source media="(max-width: 767px)" srcSet={imagePath("training_personal_session_mobile.webp")} /><Image src={imagePath("training_personal_session.webp")} alt="トレーナーのサポートを受けながら行うパーソナルトレーニング" width={1536} height={1024} unoptimized sizes="(max-width: 767px) 100vw, 58vw" /></picture>
+    <picture className={styles.serviceVisual} data-reveal="image-left" data-reveal-order="2"><Image src={imagePath("personal_training_real.webp")} alt="LA LEGENDAでパーソナルトレーニングを受ける様子" width={2048} height={1536} unoptimized sizes="(max-width: 767px) 100vw, 58vw" /></picture>
     <div className={styles.serviceCopy}><SectionHeading id="training-title" eyebrow="PERSONAL TRAINING" title={<span className={styles.trainingTitle}><span>今の身体に合わせた、</span><span>自分のためのトレーニング。</span></span>} /><p data-reveal="body" data-reveal-order="1">運動経験や年齢に関係なく、一人ひとりの目的や身体の状態に合わせて。無理なく続けられるトレーニングを考えます。</p><ol className={styles.serviceList} data-reveal="body" data-reveal-order="1"><li><span>01</span>筋力・体力づくり</li><li><span>02</span>ボディメイク</li><li><span>03</span>身体の使い方を見直す</li></ol><a className={styles.primaryButton} href="#price" data-reveal="body" data-reveal-order="1">料金を見る</a></div>
   </section>;
 }
@@ -127,7 +132,7 @@ export function CareSection() {
   return <section id="care" className={styles.care} aria-labelledby="care-title">
     <div className={styles.careInner}>
       <div className={styles.careCopy}><SectionHeading id="care-title" eyebrow="BODY CARE / WELLNESS" title={<><span>鍛えた身体を、</span><span>整える時間まで。</span></>} /><p data-reveal="body" data-reveal-order="1">トレーニングだけで終わらず、身体の状態や目的に応じたケアメニューも同じ場所で。</p><dl className={styles.careList} data-reveal="body" data-reveal-order="1"><div><dt>RECOVER</dt><dd>スポーツマッサージ</dd></div><div><dt>RELAX</dt><dd>アロマリラックス等</dd></div><div><dt>DETOX</dt><dd>ハイパーナイフ</dd></div></dl></div>
-      <picture className={styles.careVisual} data-reveal="image-right" data-reveal-order="2"><source media="(max-width: 767px)" srcSet={imagePath("care_bodywork_mobile.webp")} /><Image src={imagePath("care_bodywork_wide.webp")} alt="落ち着いた空間で受けるボディケア" width={1536} height={1024} unoptimized sizes="(max-width: 767px) calc(100vw - 40px), 58vw" /></picture>
+      <picture className={styles.careVisual} data-reveal="image-right" data-reveal-order="2"><Image src={imagePath("body_care_massage_real.webp")} alt="LA LEGENDAでボディケアを受ける様子" width={2048} height={1536} unoptimized sizes="(max-width: 767px) calc(100vw - 40px), 58vw" /></picture>
     </div>
   </section>;
 }
@@ -136,7 +141,7 @@ export function InbodySection() {
   return <section id="inbody" className={styles.inbody} aria-labelledby="inbody-title"><div className={styles.container}><div className={styles.inbodyGrid}>
     <div className={styles.inbodyVisual} data-reveal="image-left" data-reveal-order="2"><Image src={imagePath("inbody_counseling.webp")} alt="InBodyで身体の状態を確認する様子" width={1448} height={1086} unoptimized sizes="(max-width: 767px) 100vw, 36vw" /></div>
     <div className={styles.inbodyMessage}><p className={styles.eyebrow}>INBODY / COUNSELING</p><h2 id="inbody-title" data-reveal="heading">まずは、<br />今の身体を知る。</h2><p data-reveal="body" data-reveal-order="1">数字にこだわるためでなく、自分に合う始め方を一緒に考える入口として。</p></div>
-    <dl className={styles.factList} data-reveal="body" data-reveal-order="1"><div><dt>MEASUREMENT</dt><dd>InBodyによる体成分測定</dd></div><div><dt>MEMBER</dt><dd>会員の方はいつでも測定可能</dd></div></dl>
+    <dl className={styles.factList} data-reveal="body" data-reveal-order="1"><div><dt>MEASUREMENT</dt><dd>InBodyによる体成分測定</dd></div><div><dt>OPEN</dt><dd>会員の方はいつでも測定可能</dd></div></dl>
   </div><p className={styles.factNote}>店舗提供の最新情報を反映しています。</p></div></section>;
 }
 
@@ -156,19 +161,30 @@ export function GuestShootingSection() {
 
 export function MenuPriceSection() {
   return <section id="price" className={styles.price} aria-labelledby="price-title"><div className={styles.priceArc} aria-hidden="true" /><div className={styles.container}>
-    <SectionHeading id="price-title" eyebrow="MENU & PRICE" light title={<span className={styles.priceTitle}><span>続け方に合わせて選べる、</span><span>シンプルな料金。</span></span>} /><p className={styles.priceLead} data-reveal="body" data-reveal-order="1">目的やライフスタイルに合わせたプランを用意しています。表示価格は公式Instagram掲載情報と店舗提供の最新情報を基にしたサンプルです。</p>
+    <SectionHeading id="price-title" eyebrow="MENU & PRICE" light title={<span className={styles.priceTitle}><span>続け方に合わせて選べる、</span><span>シンプルな料金。</span></span>} /><p className={styles.priceLead} data-reveal="body" data-reveal-order="1">目的やライフスタイルに合わせたプランを用意しています。</p>
     <div className={styles.priceColumns} data-reveal="body" data-reveal-order="1"><div><div className={styles.priceTitleRow}><h3>PERSONAL TRAINING</h3><p>1回70分</p></div><PriceList items={trainingPlans} /></div><div className={styles.wellnessPricing}>
       <div><div className={styles.priceTitleRow}><h3>CARE &amp; WELLNESS</h3><p>代表メニュー</p></div><PriceList items={wellnessPlans} showDuration /></div>
-      <div><div className={styles.priceTitleRow}><h3>HYPER KNIFE</h3></div><PriceList items={hyperKnifePlans} showDuration /><p className={styles.subscriptionNote}>サブスクコースあり</p></div>
+      <div><div className={styles.priceTitleRow}><h3>HYPER KNIFE</h3></div><PriceList items={hyperKnifePlans} showDuration /><p className={styles.subscriptionNote}>＊ハイパーナイフはサブスクコースあり</p></div>
     </div></div>
-    <p className={styles.priceNote} data-reveal="body" data-reveal-order="1">価格の税込・税別区分、最新料金は正式公開前に店舗確認が必要です。</p><a className={styles.goldButton} href="#reservation" data-reveal="body" data-reveal-order="1">体験・相談を予約する</a>
+    <p className={styles.priceNote} data-reveal="body" data-reveal-order="1">表示価格はすべて税込です。</p><a className={styles.goldButton} href="#reservation" data-reveal="body" data-reveal-order="1">体験・相談を予約する</a>
   </div></section>;
 }
 
 export function FirstVisitSection() {
   return <section id="first-visit" className={styles.firstVisit} aria-labelledby="first-visit-title"><div className={styles.container}>
     <div className={styles.firstVisitIntro}><SectionHeading id="first-visit-title" eyebrow="FIRST VISIT" title="はじめての方へ。" /><p data-reveal="body" data-reveal-order="1"><span>最初から決めきらなくても大丈夫です。</span><span>身体や目的を確かめながら、これからの進め方を相談します。</span></p></div>
-    <div className={styles.firstVisitBody}><div className={styles.firstVisitVisual} data-reveal="image-left" data-reveal-order="2"><Image src={imagePath("first_visit_reception_guidance.webp")} alt="LA LEGENDAの受付で案内を受ける来店者" width={1448} height={1086} unoptimized sizes="(max-width: 767px) 100vw, 46vw" /></div><ol className={styles.timeline} data-reveal="body" data-reveal-order="1">{firstVisitSteps.map(([number, title, copy]) => <li key={number}><span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div></li>)}</ol></div>
+    <dl className={styles.firstVisitPlans} aria-label="初回利用の料金" data-reveal="body" data-reveal-order="1">{firstVisitPlans.map(({ label, duration, price }) => <div key={label}><dt>{label}</dt><dd><span>{duration}</span><strong>{price}</strong><small>（税込）</small></dd></div>)}</dl>
+    <div className={styles.firstVisitBody}><div className={styles.firstVisitVisual} data-reveal="image-left" data-reveal-order="2"><Image src={imagePath("first_visit_counseling_real.webp")} alt="LA LEGENDAでカウンセリングを受ける様子" width={2048} height={1536} unoptimized sizes="(max-width: 767px) 100vw, 46vw" /></div><ol className={styles.timeline} data-reveal="body" data-reveal-order="1">{firstVisitSteps.map(([number, title, copy]) => <li key={number}><span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div></li>)}</ol></div>
+    <p className={styles.visitNote} data-reveal="body" data-reveal-order="1">ご予約後、当日のご案内のため簡単な確認事項についてご連絡いたします。お車でのご来店予定・トレーニング歴・身体のお悩み・性別・年齢をお伺いします。</p>
+    <section className={styles.usageGuide} aria-labelledby="usage-guide-title">
+      <div data-reveal="heading"><p className={styles.eyebrow}>INFORMATION</p><h3 id="usage-guide-title">ご利用案内</h3></div>
+      <dl data-reveal="body" data-reveal-order="1">
+        <div><dt>お支払い方法</dt><dd>各種カード・電子決済・現金に対応しています。</dd></div>
+        <div><dt>ご予約について</dt><dd>完全予約制です。<a href="#reservation">LINE・Instagram・Hot Pepper Beautyからご予約いただけます。</a></dd></div>
+        <div><dt>予約の変更</dt><dd>予約の変更は前日までにご連絡ください。</dd></div>
+        <div><dt>キャンセルについて</dt><dd><p>無断での当日キャンセルは、コース代金の100％を頂戴します。事前にご連絡をいただいた場合は、当月内での振替が可能です。</p><p>当日キャンセルが複数回続いた場合は、セッションをお断りする場合があります。</p></dd></div>
+      </dl>
+    </section>
   </div></section>;
 }
 
@@ -183,15 +199,14 @@ export function AccessSection() {
           <address data-reveal="body" data-reveal-order="1"><strong>LA LEGENDA</strong>神奈川県横浜市保土ケ谷区星川1-25-10{" "}<span className={styles.accessBuilding}>Aletta星川1階</span></address>
           <dl className={styles.accessMetaList} data-reveal="body" data-reveal-order="1">
             <div><dt><MapPin className={`${styles.icon} ${styles.accessIcon}`} aria-hidden="true" />最寄駅</dt><dd>星川駅から徒歩約3分</dd></div>
-            <div><dt><Car className={`${styles.icon} ${styles.accessIcon}`} aria-hidden="true" />駐車場</dt><dd>GYM前 無料駐車場2台</dd></div>
+            <div><dt><Car className={`${styles.icon} ${styles.accessIcon}`} aria-hidden="true" />駐車場</dt><dd>GYM前無料駐車場 2台完備</dd></div>
             <div><dt><Clock3 className={`${styles.icon} ${styles.accessIcon}`} aria-hidden="true" />営業時間</dt><dd>10:00〜20:00</dd></div>
             <div><dt><CalendarDays className={`${styles.icon} ${styles.accessIcon}`} aria-hidden="true" />定休日</dt><dd>不定休</dd></div>
           </dl>
-          <a className={styles.mapLink} href={externalLinks.googleMaps} target="_blank" rel="noopener noreferrer" data-reveal="body" data-reveal-order="1">Google Mapsで見る<ArrowUpRight className={styles.icon} aria-hidden="true" /></a>
+          <a className={styles.mapLink} href={externalLinks.googleMaps} target="_blank" rel="noopener noreferrer" data-reveal="body" data-reveal-order="1">Googleで店舗情報を見る<ArrowUpRight className={styles.icon} aria-hidden="true" /></a>
         </div>
         <figure className={styles.accessVisual} data-reveal="image-right" data-reveal-order="2">
           <Image src={imagePath(accessImage.src)} alt={accessImage.alt} width={accessImage.width} height={accessImage.height} unoptimized sizes="(max-width: 767px) calc(100vw - 40px), 55vw" />
-          <figcaption>外観・入口のサンプルイメージ</figcaption>
         </figure>
         <div className={styles.instagramInfo} data-reveal="body" data-reveal-order="1">
           <Image className={styles.instagramQr} src={imagePath("instagram_qr.png")} alt="LA LEGENDA公式Instagramを開くQRコード" width={592} height={592} unoptimized sizes="160px" />
@@ -199,9 +214,9 @@ export function AccessSection() {
         </div>
       </div>
       <section id="reservation" className={styles.reservationHub} aria-labelledby="reservation-title">
-        <div data-reveal="heading"><p className={styles.eyebrow}>RESERVATION</p><h2 id="reservation-title">ご予約・ご相談</h2></div>
+        <div data-reveal="heading"><p className={styles.eyebrow}>RESERVATION</p><h2 id="reservation-title">ご予約・ご相談</h2><p className={styles.reservationNote}>完全予約制です。ご都合のよい予約方法をお選びください。</p></div>
         <nav className={styles.reservationLinks} aria-label="外部サービスで予約・相談" data-reveal="body" data-reveal-order="1">
-          {reservationLinks.map(({ label, href, icon: Icon }, index) => <a href={href} key={label} target="_blank" rel="noopener noreferrer"><span className={styles.reservationNumber} aria-hidden="true">0{index + 1}</span><span className={styles.reservationLabel}><Icon className={styles.icon} aria-hidden="true" />{label}</span><ArrowUpRight className={styles.icon} aria-hidden="true" /></a>)}
+          {reservationLinks.map(({ label, href, icon: Icon }, index) => <a href={href} key={label} target="_blank" rel="noopener noreferrer"><span className={styles.reservationNumber} aria-hidden="true">0{index + 1}</span><span className={styles.reservationLabel}><Icon className={styles.icon} aria-hidden="true" /><span>{label}</span></span><ArrowUpRight className={styles.icon} aria-hidden="true" /></a>)}
         </nav>
       </section>
     </div>
@@ -222,5 +237,5 @@ export function FinalCtaSection() {
 }
 
 export function Footer() {
-  return <footer className={styles.footer}><div className={styles.container}><div className={styles.footerGrid}><Image className={styles.footerLogo} src={imagePath("brand/la_legenda_footer_logo.png")} alt="LA LEGENDA Personal Training & Wellness" width={1122} height={1402} unoptimized data-reveal="image-left" data-reveal-order="2" /><div data-reveal="body" data-reveal-order="1"><p>LA LEGENDA</p><address>神奈川県横浜市保土ケ谷区星川1-25-10 Aletta星川1階<br />星川駅から徒歩約3分</address></div><nav aria-label="フッターナビゲーション" data-reveal="body" data-reveal-order="1"><a href="#concept">Concept</a><a href="#service">Service</a><a href="#price">Price</a><a href="#access">Access</a></nav></div><div className={styles.footerBottom} data-reveal="body" data-reveal-order="1"><small>営業提案用サンプル — 掲載内容・予約先は正式公開前に要確認</small><small>© LA LEGENDA Sample</small></div></div></footer>;
+  return <footer className={styles.footer}><div className={styles.container}><div className={styles.footerGrid}><Image className={styles.footerLogo} src={imagePath("brand/la_legenda_footer_logo.png")} alt="LA LEGENDA Personal Training & Wellness" width={1122} height={1402} unoptimized data-reveal="image-left" data-reveal-order="2" /><div data-reveal="body" data-reveal-order="1"><p>LA LEGENDA</p><address>神奈川県横浜市保土ケ谷区星川1-25-10 Aletta星川1階<br />星川駅から徒歩約3分</address></div><nav aria-label="フッターナビゲーション" data-reveal="body" data-reveal-order="1"><a href="#concept">Concept</a><a href="#service">Service</a><a href="#price">Price</a><a href="#access">Access</a></nav></div><div className={styles.footerBottom} data-reveal="body" data-reveal-viewport data-reveal-order="1"><small>営業提案用サンプル — 掲載内容・予約先は正式公開前に要確認</small><small>© LA LEGENDA Sample</small></div></div></footer>;
 }

@@ -1,0 +1,290 @@
+[
+  {
+    "width": 1440,
+    "reduced": false,
+    "passed": true,
+    "footer": {
+      "revealed": true,
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "inViewport": true,
+      "text": "営業提案用サンプル — 掲載内容・予約先は正式公開前に要確認\n© LA LEGENDA Sample",
+      "remaining": 0
+    },
+    "price": {
+      "rows": [
+        {
+          "text": "05\nハイパーナイフお顔\n70分\n¥11,000",
+          "visible": true,
+          "height": 83.609375
+        },
+        {
+          "text": "06\nハイパーナイフお腹＆トレ\n70分\n¥19,000",
+          "visible": true,
+          "height": 83.609375
+        },
+        {
+          "text": "07\nハイパーナイフお体＆トレ\n100分\n¥24,000",
+          "visible": true,
+          "height": 83.609375
+        }
+      ],
+      "taxNote": "表示価格はすべて税込です。",
+      "noteVisible": true,
+      "overflow": false
+    },
+    "unrevealed": []
+  },
+  {
+    "width": 1024,
+    "reduced": false,
+    "passed": true,
+    "footer": {
+      "revealed": true,
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "inViewport": true,
+      "text": "営業提案用サンプル — 掲載内容・予約先は正式公開前に要確認\n© LA LEGENDA Sample",
+      "remaining": 0
+    },
+    "price": {
+      "rows": [
+        {
+          "text": "05\nハイパーナイフお顔\n70分\n¥11,000",
+          "visible": true,
+          "height": 72.390625
+        },
+        {
+          "text": "06\nハイパーナイフお腹＆トレ\n70分\n¥19,000",
+          "visible": true,
+          "height": 72.390625
+        },
+        {
+          "text": "07\nハイパーナイフお体＆トレ\n100分\n¥24,000",
+          "visible": true,
+          "height": 72.390625
+        }
+      ],
+      "taxNote": "表示価格はすべて税込です。",
+      "noteVisible": true,
+      "overflow": false
+    },
+    "unrevealed": []
+  },
+  {
+    "width": 768,
+    "reduced": false,
+    "passed": true,
+    "footer": {
+      "revealed": true,
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "inViewport": true,
+      "text": "営業提案用サンプル — 掲載内容・予約先は正式公開前に要確認\n© LA LEGENDA Sample",
+      "remaining": 0
+    },
+    "price": {
+      "rows": [
+        {
+          "text": "05\nハイパーナイフお顔\n70分\n¥11,000",
+          "visible": true,
+          "height": 72.390625
+        },
+        {
+          "text": "06\nハイパーナイフお腹＆トレ\n70分\n¥19,000",
+          "visible": true,
+          "height": 72.390625
+        },
+        {
+          "text": "07\nハイパーナイフお体＆トレ\n100分\n¥24,000",
+          "visible": true,
+          "height": 72.390625
+        }
+      ],
+      "taxNote": "表示価格はすべて税込です。",
+      "noteVisible": true,
+      "overflow": false
+    },
+    "unrevealed": []
+  },
+  {
+    "width": 375,
+    "reduced": false,
+    "passed": true,
+    "footer": {
+      "revealed": true,
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "inViewport": true,
+      "text": "営業提案用サンプル — 掲載内容・予約先は正式公開前に要確認\n© LA LEGENDA Sample",
+      "remaining": 0
+    },
+    "price": {
+      "rows": [
+        {
+          "text": "05\nハイパーナイフお顔\n70分\n¥11,000",
+          "visible": true,
+          "height": 64.1875
+        },
+        {
+          "text": "06\nハイパーナイフお腹＆トレ\n70分\n¥19,000",
+          "visible": true,
+          "height": 64.1875
+        },
+        {
+          "text": "07\nハイパーナイフお体＆トレ\n100分\n¥24,000",
+          "visible": true,
+          "height": 64.1875
+        }
+      ],
+      "taxNote": "表示価格はすべて税込です。",
+      "noteVisible": true,
+      "overflow": false
+    },
+    "unrevealed": []
+  },
+  {
+    "width": 1440,
+    "reduced": true,
+    "passed": true,
+    "footer": {
+      "revealed": true,
+      "opacity": "1",
+      "transform": "none",
+      "inViewport": true,
+      "text": "営業提案用サンプル — 掲載内容・予約先は正式公開前に要確認\n© LA LEGENDA Sample",
+      "remaining": 0
+    },
+    "price": {
+      "rows": [
+        {
+          "text": "05\nハイパーナイフお顔\n70分\n¥11,000",
+          "visible": true,
+          "height": 83.609375
+        },
+        {
+          "text": "06\nハイパーナイフお腹＆トレ\n70分\n¥19,000",
+          "visible": true,
+          "height": 83.609375
+        },
+        {
+          "text": "07\nハイパーナイフお体＆トレ\n100分\n¥24,000",
+          "visible": true,
+          "height": 83.609375
+        }
+      ],
+      "taxNote": "表示価格はすべて税込です。",
+      "noteVisible": true,
+      "overflow": false
+    },
+    "unrevealed": []
+  },
+  {
+    "width": 1024,
+    "reduced": true,
+    "passed": true,
+    "footer": {
+      "revealed": true,
+      "opacity": "1",
+      "transform": "none",
+      "inViewport": true,
+      "text": "営業提案用サンプル — 掲載内容・予約先は正式公開前に要確認\n© LA LEGENDA Sample",
+      "remaining": 0
+    },
+    "price": {
+      "rows": [
+        {
+          "text": "05\nハイパーナイフお顔\n70分\n¥11,000",
+          "visible": true,
+          "height": 72.390625
+        },
+        {
+          "text": "06\nハイパーナイフお腹＆トレ\n70分\n¥19,000",
+          "visible": true,
+          "height": 72.390625
+        },
+        {
+          "text": "07\nハイパーナイフお体＆トレ\n100分\n¥24,000",
+          "visible": true,
+          "height": 72.390625
+        }
+      ],
+      "taxNote": "表示価格はすべて税込です。",
+      "noteVisible": true,
+      "overflow": false
+    },
+    "unrevealed": []
+  },
+  {
+    "width": 768,
+    "reduced": true,
+    "passed": true,
+    "footer": {
+      "revealed": true,
+      "opacity": "1",
+      "transform": "none",
+      "inViewport": true,
+      "text": "営業提案用サンプル — 掲載内容・予約先は正式公開前に要確認\n© LA LEGENDA Sample",
+      "remaining": 0
+    },
+    "price": {
+      "rows": [
+        {
+          "text": "05\nハイパーナイフお顔\n70分\n¥11,000",
+          "visible": true,
+          "height": 72.390625
+        },
+        {
+          "text": "06\nハイパーナイフお腹＆トレ\n70分\n¥19,000",
+          "visible": true,
+          "height": 72.390625
+        },
+        {
+          "text": "07\nハイパーナイフお体＆トレ\n100分\n¥24,000",
+          "visible": true,
+          "height": 72.390625
+        }
+      ],
+      "taxNote": "表示価格はすべて税込です。",
+      "noteVisible": true,
+      "overflow": false
+    },
+    "unrevealed": []
+  },
+  {
+    "width": 375,
+    "reduced": true,
+    "passed": true,
+    "footer": {
+      "revealed": true,
+      "opacity": "1",
+      "transform": "none",
+      "inViewport": true,
+      "text": "営業提案用サンプル — 掲載内容・予約先は正式公開前に要確認\n© LA LEGENDA Sample",
+      "remaining": 0
+    },
+    "price": {
+      "rows": [
+        {
+          "text": "05\nハイパーナイフお顔\n70分\n¥11,000",
+          "visible": true,
+          "height": 64.1875
+        },
+        {
+          "text": "06\nハイパーナイフお腹＆トレ\n70分\n¥19,000",
+          "visible": true,
+          "height": 64.1875
+        },
+        {
+          "text": "07\nハイパーナイフお体＆トレ\n100分\n¥24,000",
+          "visible": true,
+          "height": 64.1875
+        }
+      ],
+      "taxNote": "表示価格はすべて税込です。",
+      "noteVisible": true,
+      "overflow": false
+    },
+    "unrevealed": []
+  }
+]

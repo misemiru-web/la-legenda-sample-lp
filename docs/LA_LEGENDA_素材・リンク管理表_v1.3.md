@@ -2,10 +2,12 @@
 
 - 対象：LA LEGENDA（ラ レジェンダ）／保土ケ谷・星川
 - 用途：要件定義 v1.2 / デザイン定義 v1.3 / 現行GitHubリポジトリを踏まえた実装管理
-- 更新日：2026-10-05
-- ステータス：主要リンク確定・写真受領待ち
+- 更新日：2026-10-06
+- ステータス：主要リンク確定・店舗写真6枚受領済み（Phase C-2）
 
 ---
+
+> 2026-10-21追記：予約3媒体のURL・税込区分・初回料金・支払い・予約変更／キャンセル条件は、`LA_LEGENDA_正式情報反映_実装指示書_20261020.md`を優先。下記の予約URLとInstagram QR生成先は正式情報に同期済み。
 
 ## 0. 運用ルール
 
@@ -34,9 +36,9 @@
 
 | ID | 導線 | URL | 状態 | 実装 |
 |---|---|---|---|---|
-| LINK-01 | Instagram正式プロフィール | https://www.instagram.com/ne_ld1999/?hl=ja | 確定 | Reservation / Access / Footer候補 / QR生成元 |
-| LINK-02 | Hot Pepper Beauty | https://beauty.hotpepper.jp/kr/slnH000813087/?cstt=1 | 確定・既存実装 | Reservation Hubへ集約 |
-| LINK-03 | LINE友だち追加 | https://line.me/R/ti/p/@240pmolc?ts=06281635&oat_content=url | 確定・既存実装 | Reservation Hubへ集約 |
+| LINK-01 | Instagram正式プロフィール | https://www.instagram.com/ne_ld1999/ | 確定 | Reservation / Access / Footer候補 / QR生成元 |
+| LINK-02 | Hot Pepper Beauty | http://b.hpr.jp/kr/sd/H000813087 | 確定・既存実装 | Reservation Hubへ集約 |
+| LINK-03 | LINE友だち追加 | https://lin.ee/njpSzY5 | 確定・既存実装 | Reservation Hubへ集約 |
 | LINK-04 | Google Maps / Googleビジネスプロフィール | https://www.google.com/maps?sca_esv=ec734b9ba2f66c6f&rlz=1C5LDPL_enJP1194JP1202&output=search&q=LA+LEGENDA&source=lnms&fbs=ABfTbFWgnFHONIVUY2_FI1XmLOwBj8exaHm1K20WHOGaMeonhMV3kP2WYeEnGxffUz-KC66Q6yr12oVdM0HlG2G_7TnUGwA0bButCWrzdsg55x1xYALlb86iYKrIOCIwJOo9tkRs5H1Nmc2AE9VFIBZTl4FlxLVUDRBwkrtTvGVmyIJzrgBhsHeEnUiKrsStZVWdY2IZ734kcU1k4QO0yaIKKd2efj8CEZIxar5tSH4f0ipeGIKZ2SU&entry=mc&ved=1t:200715&ictx=111 | 確定 | Access |
 | LINK-05 | インタビュー記事（Local Style Yokohama） | https://localstyle-yokohama.jp/hodogaya-ku/beauty_list/facilities/10335 | 確定 | 参考情報 / 必要時のみ外部記事導線 |
 | LINK-06 | YouTube撮影実績の公式URL | 未取得 | 要確認・任意 | Shooting Text Linkのみ |
@@ -61,7 +63,7 @@ Google評価値・口コミ数などは今回の必須要件ではないため�
 |---|---|---|---|
 | QR-01 | Instagram正式URL | 生成可能 | Desktop Access中心。Mobileは直接リンク優先 |
 
-QRのエンコード先は `https://www.instagram.com/ne_ld1999/?hl=ja` とする。
+QRのエンコード先は `https://www.instagram.com/ne_ld1999/` とする。
 QRだけを唯一の導線にせず、必ずInstagram直接リンクを併設する。
 
 ---
@@ -85,19 +87,24 @@ QRだけを唯一の導線にせず、必ずInstagram直接リンクを併設す
 - `access_exterior_entrance.webp`
 - Brand logo / favicon一式
 
-`access_exterior_entrance.webp` はAccess外観写真候補として確認する。
+`access_exterior_entrance.webp` は旧仮素材として保持。Accessは店舗提供の `access_exterior_real.webp` へ差し替え済み。
 
 ---
 
 ## 5. 新規写真
 
-| Asset ID | 内容 | 状態 |
-|---|---|---|
-| IMG-NEW-01 | 店舗から別送予定 | 受領待ち |
-| IMG-NEW-02 | 店舗から別送予定 | 受領待ち |
-| IMG-NEW-03 | 店舗から別送予定 | 受領待ち |
+6枚とも店舗提供・人物を含むLP掲載使用許可済み（Asset Source MemoのStatus A）。
 
-受領後、Web掲載許可と用途を確認して既存写真との差し替え可否を決める。
+| 原本（tmp-assets/） | Web asset（public/images/） | 用途・実装状態 |
+|---|---|---|
+| `AAA_0061.JPG` | `first_visit_counseling_real.webp` | First Visit（採用） |
+| `AAA_0093.JPG` | `training_mobility_real.webp` | 未使用：Conceptの横長枠では動作が切れるため現状維持 |
+| `cc666b93-c658-49fa-83fb-ded086b11ad7.jpg` | `counseling_real.webp` | 未使用：カウンセリング写真。InBody用途には使用しない |
+| `photo_0009.jpg` | `body_care_massage_real.webp` | Body Care（採用） |
+| `photo_0075.jpg` | `access_exterior_real.webp` | Access（採用） |
+| `photo_0081.jpg` | `personal_training_real.webp` | Personal Training（採用） |
+
+quality 90のWebP、元解像度・アスペクト比・ICCプロファイルを保持。画像自体の追加加工は行わず、施設写真はそのまま使用する。
 
 ---
 
@@ -158,7 +165,7 @@ QRだけを唯一の導線にせず、必ずInstagram直接リンクを併設す
 
 ## 10. 現在の残タスク
 
-- 新規写真：受領待ち
+- 新規写真6枚：受領済み・使用許可済み。Phase C-2で4枚採用、2枚未使用
 - YouTube撮影実績の公式URL：必要な場合のみ
 - InBody非会員条件：詳細掲載する場合のみ
 - Hyper Knifeサブスク詳細：詳細掲載する場合のみ

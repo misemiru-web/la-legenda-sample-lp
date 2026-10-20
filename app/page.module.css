@@ -208,6 +208,25 @@
 .timeline h3 { font-family: var(--font-display); font-size: 19px; font-weight: 500; }
 .timeline p { margin-top: 4px; color: var(--color-text-secondary); font-size: 14px; line-height: 1.65; }
 
+.firstVisitPlans { display: grid; margin-top: 28px; grid-template-columns: repeat(2, minmax(0, 1fr)); border-block: 1px solid var(--color-border); }
+.firstVisitPlans > div { padding: 20px 28px; }
+.firstVisitPlans > div + div { border-left: 1px solid var(--color-border); }
+.firstVisitPlans dt { font-size: 16px; }
+.firstVisitPlans dd { display: flex; align-items: baseline; flex-wrap: wrap; column-gap: 12px; }
+.firstVisitPlans dd > span { color: var(--color-text-secondary); font-size: 14px; }
+.firstVisitPlans strong { font-family: var(--font-display); font-size: 30px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.firstVisitPlans small { color: var(--color-text-secondary); font-size: 13px; }
+.visitNote { max-width: 900px; margin-top: 24px; color: var(--color-text-secondary); font-size: 14px; line-height: 1.8; }
+.usageGuide { display: grid; margin-top: 36px; padding-top: 28px; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: 32px; border-top: 1px solid var(--color-border); }
+.usageGuide h3 { margin-top: 12px; font-family: var(--font-display); font-size: 24px; font-weight: 500; }
+.usageGuide dl > div { display: grid; padding: 14px 0; grid-template-columns: 140px minmax(0, 1fr); gap: 24px; border-bottom: 1px solid var(--color-border); font-size: 15px; line-height: 1.8; }
+.usageGuide dl > div:first-child { padding-top: 0; }
+.usageGuide dt { font-weight: 500; }
+.usageGuide dd { color: var(--color-text-secondary); }
+.usageGuide dd p + p { margin-top: 8px; }
+.usageGuide a { text-decoration: underline; text-underline-offset: 4px; }
+.reservationNote { max-width: 30em; margin-top: 12px; color: var(--color-text-secondary); font-size: 14px; line-height: 1.8; }
+
 .access { padding: 88px 0; background: var(--color-stone); }
 .accessGrid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 24px 48px; align-items: start; }
 .accessTitleDesktop,
@@ -327,13 +346,16 @@
 }
 
 @media (min-width: 1024px) {
+  .training { min-height: 0; grid-template-columns: 53% 47%; align-items: center; }
+  .serviceVisual img { height: auto; max-height: 660px; aspect-ratio: 4 / 3; object-fit: cover; }
+  .serviceCopy { padding-block: 48px; }
   .reservationHub { margin-top: 40px; }
   .serviceCopy .sectionHeading h2 { font-size: 36px; word-break: keep-all; }
-  .firstVisit { padding: 64px 0; }
+  .firstVisit { padding: 56px 0; }
   .firstVisit .goldRule { margin: 18px 0 24px; }
   .firstVisitIntro > p { line-height: 1.7; }
-  .firstVisitBody { margin-top: 28px; align-items: end; }
-  .firstVisitVisual img { aspect-ratio: 4 / 4.5; }
+  .firstVisitBody { margin-top: 24px; align-items: end; }
+  .firstVisitVisual img { aspect-ratio: 4 / 3; object-position: center; }
   .timeline li { padding: 12px 0; }
   .timeline p { line-height: 1.6; }
 }
@@ -438,7 +460,7 @@
   .careList dt { font-size: 13px; letter-spacing: .12em; }
   .careList dd { font-size: 16px; line-height: 1.5; }
   .careVisual { order: 2; }
-  .careVisual img { width: 100%; height: auto; aspect-ratio: 1 / 1.05; object-position: center 46%; }
+  .careVisual img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-position: center; }
 
   .inbody { padding: 42px 0; }
   .inbodyGrid { display: flex; flex-direction: column; gap: 22px; }
@@ -504,6 +526,17 @@
   .firstVisit { padding: 44px 0; }
   .firstVisitIntro { display: block; }
   .firstVisitIntro > p { margin-top: 14px; line-height: 1.65; }
+  .firstVisitPlans { margin-top: 20px; grid-template-columns: minmax(0, 1fr); }
+  .firstVisitPlans > div { display: flex; padding: 14px 0; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; }
+  .firstVisitPlans > div + div { border-left: 0; border-top: 1px solid var(--color-border); }
+  .firstVisitPlans dt { font-size: 15px; }
+  .firstVisitPlans dd { column-gap: 6px; }
+  .firstVisitPlans strong { font-size: 26px; }
+  .firstVisitPlans small { font-size: 12px; }
+  .visitNote { margin-top: 20px; }
+  .usageGuide { margin-top: 28px; padding-top: 24px; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .usageGuide dl > div { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .usageGuide h3 { font-size: 22px; }
   .firstVisitBody { display: flex; margin-top: 24px; flex-direction: column; gap: 18px; }
   .firstVisitVisual img { aspect-ratio: 16 / 10; object-position: center; }
   .timeline { width: 100%; }
@@ -530,7 +563,8 @@
   .reservationHub { margin-top: 28px; padding: 24px 20px; grid-template-columns: minmax(0, 1fr); gap: 20px; scroll-margin-top: 80px; }
   .reservationHub .eyebrow { margin-bottom: 8px; }
   .reservationHub h2 { font-size: 28px; }
-  .reservationLinks a { min-height: 54px; padding-block: 10px; font-size: 16px; }
+  .reservationLinks a { min-height: 56px; padding-block: 12px; grid-template-columns: 20px minmax(0, 1fr) auto; gap: 8px; font-size: 15px; }
+  .reservationLabel { gap: 8px; line-height: 1.6; }
   .accessVisual { width: 100%; }
   .accessVisual img { aspect-ratio: 16 / 10; object-position: center; }
 
